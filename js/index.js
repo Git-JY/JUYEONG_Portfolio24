@@ -13,7 +13,7 @@ elkakaoA = elFooter.querySelector('a.kakaoBtn'), // 카카오버튼
 elKakaoQR = elbody.querySelector('div.kakaoQR'), // 내려오는 카카오 QR전체
 elcloseBtn = elKakaoQR.querySelector('button.close'); // 카카오 QR X버튼
 
-fetch("/myJson/mySkill.json", {
+fetch("./myJson/mySkill.json", {
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
