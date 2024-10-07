@@ -13,136 +13,141 @@ elkakaoA = elFooter.querySelector('a.kakaoBtn'), // 카카오버튼
 elKakaoQR = elbody.querySelector('div.kakaoQR'), // 내려오는 카카오 QR전체
 elcloseBtn = elKakaoQR.querySelector('button.close'); // 카카오 QR X버튼
 
-
-$.ajax({
-    url: "../myJson/mySkill.json",
-    success: function(skillObj) {
-        const keys = Object.keys(skillObj);
-            const widthAll = []; // 게이지의 width값을 2차배열로 저장할 배열변수
+// //경우 1 ajax)
+// $.ajax({
+//     url: "../myJson/mySkill.json",
+//     success: function(skillObj) {
+//         const keys = Object.keys(skillObj);
+//             const widthAll = []; // 게이지의 width값을 2차배열로 저장할 배열변수
         
-            elUl_skillAll.forEach((elUl, k) => {
-                let tag = '';
-                const ulWidthAll = []; // 2차배열에 각 요소로 넣을 임시 배열변수
+//             elUl_skillAll.forEach((elUl, k) => {
+//                 let tag = '';
+//                 const ulWidthAll = []; // 2차배열에 각 요소로 넣을 임시 배열변수
         
-                // "frontEnd" 배열(k=0), "backEnd" 배열(k=1), "etc" 배열(k=2)
-                skillObj[keys[k]].forEach((liInfo)=>{ 
-                    tag += `<li title=${liInfo.name}>
-                                <i>
-                                    <img src=${liInfo.img} alt=${liInfo.name}>
-                                    <span class="txtVer
-                                    ">${liInfo.name}</span>
-                                </i>
-                                <div class="gaugeBar">
-                                    <span class="gauge" style="width: 0%"></span>
-                                </div>
-                            </li>`;
+//                 // "frontEnd" 배열(k=0), "backEnd" 배열(k=1), "etc" 배열(k=2)
+//                 skillObj[keys[k]].forEach((liInfo)=>{ 
+//                     tag += `<li title=${liInfo.name}>
+//                                 <i>
+//                                     <img src=${liInfo.img} alt=${liInfo.name}>
+//                                     <span class="txtVer
+//                                     ">${liInfo.name}</span>
+//                                 </i>
+//                                 <div class="gaugeBar">
+//                                     <span class="gauge" style="width: 0%"></span>
+//                                 </div>
+//                             </li>`;
         
-                    ulWidthAll.push(liInfo.proficiency);
-                });
-                widthAll.push(ulWidthAll);
+//                     ulWidthAll.push(liInfo.proficiency);
+//                 });
+//                 widthAll.push(ulWidthAll);
         
-                elUl.innerHTML = tag;
-            });//elUl_skillAll.forEach((elUl, k)
+//                 elUl.innerHTML = tag;
+//             });//elUl_skillAll.forEach((elUl, k)
         
-            // 마주칠 때 게이지 채우기
-            const options = {
-                threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
-            }
+//             // 마주칠 때 게이지 채우기
+//             const options = {
+//                 threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
+//             }
         
-            const io = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry =>{
+//             const io = new IntersectionObserver((entries, observer) => {
+//                 entries.forEach(entry =>{
         
-                    if(entry.isIntersecting){
-                        elUl_skillAll.forEach((elUl, k1) => {
-                            elUl.querySelectorAll('li span.gauge').forEach((elSpan, k2) => {
-                                elSpan.style.width = widthAll[k1][k2] + '%';
-                            })
-                        });//elUl_skillAll.forEach((elUl, k1) => {
+//                     if(entry.isIntersecting){
+//                         elUl_skillAll.forEach((elUl, k1) => {
+//                             elUl.querySelectorAll('li span.gauge').forEach((elSpan, k2) => {
+//                                 elSpan.style.width = widthAll[k1][k2] + '%';
+//                             })
+//                         });//elUl_skillAll.forEach((elUl, k1) => {
         
-                        observer.unobserve(el_artic_skill);
-                    }//if(entry.isIntersecting)
+//                         observer.unobserve(el_artic_skill);
+//                     }//if(entry.isIntersecting)
         
-                })
-            }, options)//const io = new IntersectionObserver
-            io.observe(el_artic_skill);
+//                 })
+//             }, options)//const io = new IntersectionObserver
+//             io.observe(el_artic_skill);
             
-            // 스킬아이콘 토글버튼 체크박스 change이벤트
-            elCheck_SkillIcon.onchange = (e) => {
-                if(e.target.checked){
-                    el_artic_skill.classList.remove('OFF');
-                }else{
-                    el_artic_skill.classList.add('OFF');
-                }
+//             // 스킬아이콘 토글버튼 체크박스 change이벤트
+//             elCheck_SkillIcon.onchange = (e) => {
+//                 if(e.target.checked){
+//                     el_artic_skill.classList.remove('OFF');
+//                 }else{
+//                     el_artic_skill.classList.add('OFF');
+//                 }
         
-            }//elCheck_SkillIcon.onchange
+//             }//elCheck_SkillIcon.onchange
+//     }
+//   });
+
+
+//경우 2 fetch)
+fetch("../myJson/mySkill.json", {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
     }
-  });
-// fetch("../myJson/mySkill.json", {
-//     headers: {
-//       "Content-Type": "application/json",
-//       "Accept": "application/json",
-//     }
-//   }).then(res => res.json()).then((skillObj)=>{
-//     const keys = Object.keys(skillObj);
-//     const widthAll = []; // 게이지의 width값을 2차배열로 저장할 배열변수
+  })
+  .then(res => res.json())
+  .then((skillObj)=>{
+    const keys = Object.keys(skillObj);
+    const widthAll = []; // 게이지의 width값을 2차배열로 저장할 배열변수
 
-//     elUl_skillAll.forEach((elUl, k) => {
-//         let tag = '';
-//         const ulWidthAll = []; // 2차배열에 각 요소로 넣을 임시 배열변수
+    elUl_skillAll.forEach((elUl, k) => {
+        let tag = '';
+        const ulWidthAll = []; // 2차배열에 각 요소로 넣을 임시 배열변수
 
-//         // "frontEnd" 배열(k=0), "backEnd" 배열(k=1), "etc" 배열(k=2)
-//         skillObj[keys[k]].forEach((liInfo)=>{ 
-//             tag += `<li title=${liInfo.name}>
-//                         <i>
-//                             <img src=${liInfo.img} alt=${liInfo.name}>
-//                             <span class="txtVer
-//                             ">${liInfo.name}</span>
-//                         </i>
-//                         <div class="gaugeBar">
-//                             <span class="gauge" style="width: 0%"></span>
-//                         </div>
-//                     </li>`;
+        // "frontEnd" 배열(k=0), "backEnd" 배열(k=1), "etc" 배열(k=2)
+        skillObj[keys[k]].forEach((liInfo)=>{ 
+            tag += `<li title=${liInfo.name}>
+                        <i>
+                            <img src=${liInfo.img} alt=${liInfo.name}>
+                            <span class="txtVer
+                            ">${liInfo.name}</span>
+                        </i>
+                        <div class="gaugeBar">
+                            <span class="gauge" style="width: 0%"></span>
+                        </div>
+                    </li>`;
 
-//             ulWidthAll.push(liInfo.proficiency);
-//         });
-//         widthAll.push(ulWidthAll);
+            ulWidthAll.push(liInfo.proficiency);
+        });
+        widthAll.push(ulWidthAll);
 
-//         elUl.innerHTML = tag;
-//     });//elUl_skillAll.forEach((elUl, k)
+        elUl.innerHTML = tag;
+    });//elUl_skillAll.forEach((elUl, k)
 
-//     // 마주칠 때 게이지 채우기
-//     const options = {
-//         threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
-//     }
+    // 마주칠 때 게이지 채우기
+    const options = {
+        threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
+    }
 
-//     const io = new IntersectionObserver((entries, observer) => {
-//         entries.forEach(entry =>{
+    const io = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry =>{
 
-//             if(entry.isIntersecting){
-//                 elUl_skillAll.forEach((elUl, k1) => {
-//                     elUl.querySelectorAll('li span.gauge').forEach((elSpan, k2) => {
-//                         elSpan.style.width = widthAll[k1][k2] + '%';
-//                     })
-//                 });//elUl_skillAll.forEach((elUl, k1) => {
+            if(entry.isIntersecting){
+                elUl_skillAll.forEach((elUl, k1) => {
+                    elUl.querySelectorAll('li span.gauge').forEach((elSpan, k2) => {
+                        elSpan.style.width = widthAll[k1][k2] + '%';
+                    })
+                });//elUl_skillAll.forEach((elUl, k1) => {
 
-//                 observer.unobserve(el_artic_skill);
-//             }//if(entry.isIntersecting)
+                observer.unobserve(el_artic_skill);
+            }//if(entry.isIntersecting)
 
-//         })
-//     }, options)//const io = new IntersectionObserver
-//     io.observe(el_artic_skill);
+        })
+    }, options)//const io = new IntersectionObserver
+    io.observe(el_artic_skill);
     
-//     // 스킬아이콘 토글버튼 체크박스 change이벤트
-//     elCheck_SkillIcon.onchange = (e) => {
-//         if(e.target.checked){
-//             el_artic_skill.classList.remove('OFF');
-//         }else{
-//             el_artic_skill.classList.add('OFF');
-//         }
+    // 스킬아이콘 토글버튼 체크박스 change이벤트
+    elCheck_SkillIcon.onchange = (e) => {
+        if(e.target.checked){
+            el_artic_skill.classList.remove('OFF');
+        }else{
+            el_artic_skill.classList.add('OFF');
+        }
 
-//     }//elCheck_SkillIcon.onchange
+    }//elCheck_SkillIcon.onchange
     
-// })//.then((skillObj)=>{
+})//.then((skillObj)=>{
 
 const options2 = {
     threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
