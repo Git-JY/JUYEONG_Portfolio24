@@ -1,0 +1,808 @@
+@use "./common" as *;
+
+@media (max-width: 1070px) {
+    
+
+header{
+    // outline: 1px solid red;
+    // position: fixed; top: 0px; left: 0px;
+    
+    width: 100%;
+    padding: 0px $pd_middle;
+
+    //임시 h1: 70px + margin-top: 48px
+    // &:hover{
+    //     transform: translateY(-118px);
+    // }
+
+    >div.contentsWrapper{
+        // outline: 1px solid blue;
+        padding-bottom: 1vw;
+
+        >h1{
+            // outline: 1px solid red;
+            margin-top: 3vw;
+            font-size: 6vw;
+            // @include font(4rem, $fw3, black){
+            //     letter-spacing: 1.28px;
+            //     text-wrap: nowrap;
+            // }
+        }//>h1
+
+        >nav{
+            // outline: 1px solid red;
+            height: 4vw;
+            margin-top: 1vw;
+    
+            >a{
+                // outline: 1px solid red;
+                padding: 1vw;
+                border-radius: 2vw;
+                
+                // @include font(1.75rem, $fw2, black){
+                //     text-wrap: nowrap;
+                // };
+                font-size: 3vw;
+
+                &:not(:last-child){
+                    margin-right: 2.5vw;
+                } 
+            }//>a
+        }//>nav
+
+    }//>div.contentsWrapper
+}//header
+
+section.sec_intro{ 
+    padding: (17.9vw + 6vw) $pd_middle 10vw;
+
+    // 사진 + (이름~이메일)
+    >div.basic_intro{
+        // outline: 1px solid red;
+        height: 30vw;
+
+        //공통 div(.leftSide, .rightSide)
+        >div{
+
+            &.leftSide{//프로필 사진
+                // outline: 1px solid red;
+                width: 25vw;
+                margin-right: 5.5vw;
+    
+                >img{
+                }
+            }//&.leftSide
+    
+            &.rightSide{//글귀
+                // outline: 1px solid red;
+                >dl{
+                    font-size: 2.4vw;
+    
+                    &:not(:last-child){
+                        margin-bottom: 2vw;
+                    }
+    
+                    >dt{
+                        // outline: 1px solid red;
+                        width: 10vw; height: 5vw;
+                        border-radius: 1.5vw;
+                        margin-right: 1.4vw;
+                    }//>dt
+    
+                    >dd{
+                    }//>dd
+                }//>dl
+            }//&.rightSide
+        }//>div
+
+
+    }//>div.basic_intro
+
+    >article.keyword_intro{
+        // outline: 1px solid red;
+        margin-top: 9vw;
+
+        >div.keywordName{
+            
+            >h3{
+                font-size: 3.6vw;
+                padding: 0px 2vw;
+
+            }//>h3
+
+            >ul{
+                // outline: 1px solid blue;
+
+                margin: 5vw 0px;
+
+                >li{
+                    // outline: 1px solid red;
+                    width: 18vw; height: 18vw;
+                    font-size: 3.6vw;
+                    &:not(:last-child){
+                        margin-right: 7.5vw;
+                    }
+
+                    // 분석적 사고 나누기 위함
+                    >span{
+                    }//>span 
+
+                    // &:hover{
+                    //     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+                    // }
+                }//>li
+            }//>ul
+        }//>div.keywordName
+
+        >div.keywordTxt{
+            margin-top: 6vw;
+            
+            font-size: 2.4vw;
+
+            //공통
+            b, strong{
+            }//b, strong
+
+            >ul.keywordComments{
+
+                >li{
+                    &:not(:last-child){
+                        margin-bottom: 3.8vw;
+                    }
+
+                    >b{
+                    }
+                }//>li
+
+            }//>ul.keywordComments
+
+            >span{
+                margin-top: 6.2vw;
+                >strong{
+                }
+            }//>span
+
+        }//>div.keywordTxt
+
+    }//>article.keyword_intro
+
+}//section.sec_intro
+
+section.sec_skill{
+    padding: 8vw $pd_middle 10.4vw;
+
+    //공통 article(.education_skill, article.certificate_skill, .skill_skill)
+    article{
+        // outline: 1px solid red;
+        border-radius: 2vw;
+
+        >h3, >div.titleWrapper{
+            // absolute라서 알아서 inline-block됨
+            padding: 0.8vw 1.4vw;
+            font-size: 3.6vw;
+            border-radius: 1vw;
+        }//>h3
+
+    }//article 공통
+
+    //(div.topWrapper, article.skill_skill) 묶음
+    >div.allWrapper_skill{
+        // outline: 1px solid red;
+        width: 90vw;
+
+        >div.topWrapper{
+            // outline: 1px solid red;
+            height: 35.6vw;
+            
+            >article.education_skill{
+                // outline: 1px solid red;
+                padding: 6vw 2vw 0px;
+                 
+                >h3{
+                    
+                }//>h3
+    
+                >ul.contentsWrapper{
+                    >li.inforWrapper{
+                        &:not(:last-child){
+                            margin-bottom: 3vw;
+                        }
+    
+                        >strong.period{
+                            // outline: 1px solid red;
+                            padding: 1.4vw 2.6vw;
+                            border-radius: 3.0vw;
+    
+                            font-size: 2vw;
+                            // @include font(20px, $fw2, white){
+                            //     letter-spacing: 1px;
+                            //     text-wrap: nowrap;
+                            // };
+    
+                            >mark{
+                                width: 6vw; height: 6vw;
+                                // border: 2px dashed #D05555;
+                                font-size: 1.8vw;
+
+                            }//>mark
+                        }//>strong.Period
+
+                        >div.inforTxt{
+                            // outline: 1px solid red;
+
+                            //14px에서 1px더 여백있는 게 좋아서 이렇게 함
+                            margin: 1.5vw 0px 0px 2.6vw; 
+    
+                            >span{
+                                font-size: 1.8vw;
+                                // @include font(18px, $fw3, black){
+                                //     line-height: 122%;
+                                //     letter-spacing: 0.36px;
+                                //     @include text;
+                                // };
+
+                            }//>span
+                            
+                        }//>div.inforTxt
+                    }//>li.inforWrapper
+                }//>ul.contentsWrapper
+            }//>article.education_skill
+    
+            >article.certificate_skill{
+                // outline: 1px solid red;
+
+                padding: 6.0vw 4.0vw 0px 3.4vw;
+    
+                >h3{}
+
+                >ul.contentsWrapper{
+
+                    >li{
+                        // outline: 1px solid red;
+                        &:not(:last-child){
+                            margin-bottom: 3.0vw;
+                        }
+
+                        >i{
+                            // outline: 1px solid red;
+
+                            width: 9vw; height: 9vw;
+                            margin-right: 3vw;
+                            >img{
+                                width: 100%; height: 100%;
+                            }//>img
+                        }//>i
+
+                        >p{
+                            font-size: 2.4vw;
+                            // @include font(24px, $fw2, black){
+                            //     letter-spacing: 0.48px;
+                            // };
+    
+                            >span{
+                            }//>span
+
+                            >b{
+                            }//>b
+
+                        }//>p
+                        
+                    }//li
+                }//ul.contentsWrapper
+
+            }//article.certificate_skill
+
+        }//>div.topWrapper
+    
+        >article.skill_skill{
+            padding: 4.6vw 9vw 4.8vw;
+            margin-top: 6.4vw;
+    
+            >div.titleWrapper{
+                >h3{
+                    font-size: 3.6vw;
+                }//>h3
+
+                >div.skillIconWrappper{//체크박스 + 스킬아이콘 토글버튼
+                    margin-left: 1.2vw;
+
+                    input#skillIcon{
+                    }
+
+                    >label{//스킬아이콘 토글버튼
+                        width: 6.9vw; height: 3.2vw;
+                        padding: 0.6vw 0.7vw;
+                        border-radius: 5vw;
+                        
+                        >span{//동그라미
+                            //(전체너비69px - 몸통너비 20px - 패딩 7px)
+                            left: 4.2vw;
+                            
+                            width: 2.0vw; height: 2.0vw;
+                            // box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.10);
+                        }
+
+                        &::before{//글귀
+                            left: 1.3vw;
+
+                            font-size: 0.96vw;
+                            // letter-spacing: 0.24px;
+
+                        }
+                    }//>label
+                    input:checked + label{
+
+                        >span{                           
+                            left: 0.7vw;
+                        }
+
+                        &::before{
+                            right: 1.3vw;
+                        }
+
+                    }//input:checked + label
+                }//>div.skillIconWrappper
+
+            }//div.titleWrapper
+    
+            >div.contentsWrapper{
+                // outline: 1px solid violet;
+
+                //공통 (div.frontEndWrapper, div.backEndWrapper, div.etcWrapper)
+                div.skillWrapper{ 
+                    // outline: 1px solid red;
+    
+                    >h4{
+                        // outline: 1px solid red;
+                        border-radius: 3vw;
+                        padding: 1vw 2vw;
+
+                        font-size: 1.6vw;
+                        // @include font(16px, $fw2, white){
+                        //     letter-spacing: 0.8px;
+                        //     text-wrap: nowrap;
+                        // }
+                    }//>h4
+    
+                    ul.skillGroup{
+                        margin-top: 2.8vw;
+
+                        >li{
+                            // outline: 1px solid red;
+
+                            height: 4vw;
+
+                            &:not(:last-child){
+                                margin-bottom: 2vw;
+                            }
+
+                            >i{
+                                // outline: 1px solid red;
+                                width: 4vw;
+                                margin-right: 1.7vw;
+
+                                >img{
+                                    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+                                    // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                                    
+                                }//>img
+
+                                >span.txtVer{
+                                    font-size: 1.2vw;
+                                    // letter-spacing: 0.24px;
+
+                                    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+                                    // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+                                    display: none;
+                                }//>span.txtVer
+                                
+                            }//>i
+    
+                            >div.gaugeBar{
+                                width: 26.4vw; height: 57.5%;
+                                border-radius: 1vw; 
+
+                                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+                                // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+                                >span.gauge{
+                                    border-radius: 1vw;
+                                }//>span.gauge
+
+                            }//>div.gaugeBar
+                            
+                        }//>li
+        
+                    }//>ul.skillGroup
+        
+                }//>div.skillWrapper 공통 
+
+                >div.frontEndWrapper{
+    
+                    >h4{
+    
+                    }
+
+                    >ul.skillGroup{
+                        >li{
+                            >i{
+                                >img{
+
+                                }
+                            }//>i
+
+                            >div.gaugeBar{
+                                >span.gauge{
+
+                                }//>span.gauge
+                            }//>div.gaugeBar
+                            
+                        }//>li
+                    }//>ul.skillGroup
+
+                }//>div.frontEndWrapper
+    
+                >div.rightSide{
+                    >div.backEndWrapper{
+                        margin-bottom: 3vw;
+
+                        >h4{
+                        }
+
+                        >ul.skillGroup{
+                            >li{
+                                >i{
+                                    >img{
+
+                                    }
+                                }
+
+                                >div.gaugeBar{
+                                    >span.gauge{
+
+                                    }
+                                }
+
+                            }//>li
+                        }//>ul.skillGroup
+
+                    }//>div.backEndWrapper
+
+                    >div.etcWrapper{
+                        >h4{
+                        }
+                        
+                        >ul.skillGroup{
+                            >li{
+                                >i{
+                                    >img{
+
+                                    }
+                                }
+
+                                >div.gaugeBar{
+                                    >span.gauge{
+
+                                    }
+                                }
+
+                            }//>li
+                        }//>ul.skillGroup
+
+                    }//>div.etcWrapper
+
+                }//>div.rightSide
+    
+            }//>div.contentsWrapper
+
+            &.OFF{       
+                >div.contentsWrapper{
+
+                    //공통 (div.frontEndWrapper, div.backEndWrapper, div.etcWrapper)
+                    div.skillWrapper{ 
+        
+                        >h4{
+                        }//>h4
+        
+                        ul.skillGroup{
+    
+                            >li{
+                                
+    
+                                >i{
+                                    
+    
+                                    >img{
+                                        
+                                    }//>img
+    
+                                    >span.txtVer{
+                                    }//>span.txtVer
+                                    
+                                }//>i
+        
+                                >div.gaugeBar{
+                                    >span.gauge{
+                                    }//>span.gauge
+    
+                                }//>div.gaugeBar
+                                
+                            }//>li
+            
+                        }//>ul.skillGroup
+            
+                    }//>div.skillWrapper 공통 
+        
+                }//>div.contentsWrapper
+            }//&.OFF
+    
+        }//>article.skill_skill
+
+    }//>div.allWrapper_skill
+
+}//section.sec_skill
+
+section.sec_portfolio{
+    // outline: 1px solid blueviolet;
+
+    padding: 6vw 0px 12vw; 
+    // padding: 6vw $pd_middle 12vw; ///////////
+
+    >article.wrapper{
+        // outline: 1px solid pink;
+        
+        >h2{
+            // outline: 1px solid red;
+
+            font-size: 4.2vw;
+            // @include font(42px, $fw3, black){
+            //     letter-spacing: 0.84px;
+            //     text-wrap: nowrap;
+            // };
+
+            >button.gitBtn{
+                // outline: 1px solid red;
+
+                width: 3.8vw;  height: 3.8vw;
+                margin-left: 1.2vw;
+
+            }//>button.gitBtn
+
+        }//>h2
+
+        //하늘색 포트폴리오 묶음
+        >div.contentsWrapper{
+            // outline: 1px solid red;
+
+            margin-top: 2.7vw;
+            
+            width: 100%;
+            // width: 99.7vw; ///////////
+            // border-radius: 1.5vw; //////////
+            border-radius: 0px;
+            padding: 3.5vw 0px 8.5vw;
+
+            >nav.polderMenu{
+
+                >a.polder{
+                    // outline: 1px solid red;
+                    &:not(:last-child){
+                        margin-right: 3vw;
+                    }
+
+                    cursor: pointer;
+
+                    >p.polderImg{//흰 배경
+                        // outline: 1px solid red;
+
+                        width: 6vw; height: 6vw;
+                        border-radius: 1vw; 
+
+                        // padding: 7px;
+                        padding: 11%;
+
+                        >i.polderIcon{//폴더 아이콘
+                        }//>i.polderIcon
+
+                    }//>p.polderImg
+
+                    >span{
+                        font-size: 2vw;
+                        // @include font(20px, $fw3, black){
+                        //     letter-spacing: 0.4px;
+                        //     text-wrap: nowrap;
+                        // }
+                        margin-top: 1vw;
+                    }//>span
+
+                }//>a.polder
+
+            }//>nav.polderMenu
+
+            >ul.portfolioContents{//포트폴리오 네모박스 모음
+                // outline: 1px solid red;
+
+                margin-top: 4vw;
+                // margin-top: 2.5vw;//////////////
+
+                @include flex(){
+                    // column-gap: 78px; row-gap: 26px;
+                    column-gap: 7.8%; row-gap: 2.6vw;
+                }
+
+                >li{//포트폴리오 하나 네모박스
+                    // outline: 1px solid red;
+
+                    width: 30vw; height: 30vw; ////////
+                    // width: 20vw; height: 20vw;
+                    border-radius: 1vw;
+                }//>li
+
+            }//>ul.portfolioContents
+
+        }//>div.contentsWrapper
+
+    }//>article.wrapper
+
+}//section.sec_portfolio
+
+footer{
+    // outline: 1px solid red;
+    height: 12vw;
+
+    >a{
+        // outline: 1px solid red;
+
+        >i.icon{
+            // outline: 1px solid red;
+
+            width: 5.5vw; height: 5.5vw;
+            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.02));
+            // filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.02));
+        }//>i.icon
+
+        &.callBtn{
+            >i.icon{
+            }
+        }//&.callBtn
+
+        &.emailBtn{
+            >i.icon{
+            }
+        }//&.emailBtn
+
+        &.kakaoBtn{
+            >i.icon{
+                width: 6.3vw; height: 5.7vw;
+            }
+        }//&.kakaoBtn
+    }//>a.callBtn
+}//>footer
+
+//button.topUpBtn은 아직 수정x
+button.topUpBtn{
+    // position: fixed; right: 30px; bottom: 85px;
+
+    // width: 70px; height: 70px;
+    // border-radius: 50%;
+    // background-color: white;
+
+    // @include flex();
+
+    // opacity: 0.8;
+    // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+    // >i.icon{
+    //     width: 28px; height: 27px;
+    //     background: url(../img/icon_topUp.svg) center / 100% 100% no-repeat scroll;
+    // }
+
+}//>button.topUpBtn
+
+div.kakaoQR{
+
+    >button.close{
+        // outline: 1px solid red;
+        top: 1.8vw; right: 3vw;
+        width: 2.5vw; height: 2.5vw;
+    }//>button.close
+
+    >div.wrapper{
+        // outline: 1px solid red;
+
+        border-radius: 5vw;
+        
+        >span{
+            // outline: 1px solid red;
+            padding: 2vw 0.7vw 0.7vw;
+
+            font-size: 2.8vw;
+            // @include font(28.8px, $fw2, rgba(249, 224, 0, 0.9)){
+            //     letter-spacing: 3.2px;
+            //     text-wrap: nowrap;
+            // };
+
+        }
+        >i{
+            
+            >img{
+            }
+        }
+    }//>div.wrapper
+
+    &.on{
+        box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.7);
+    }//&.on
+
+}//div.kakaoQR
+
+//alert창 꾸미기
+div.swal2-container{
+    border-radius: 10px;
+
+    div.swal2-popup{
+        width: 38vw;
+        padding: 2.4vw 3vw;
+        // display: flex !important;
+        // justify-content: flex-start;
+        // align-items: center;
+        // flex-direction: column;
+
+        // div.swal2-icon{
+        //     width: 40px; height: 40px;
+        //     margin: 0px 0px 20px;
+
+        //     div.swal2-icon-content{
+        //         font-size: 35px;
+
+        //     }
+        // }
+
+        h2.swal2-title{
+            font-size: 2.4vw;
+        }
+        div.swal2-html-container{
+            padding: 1.6vw 0px 1.6vw;
+            font-size: 1.8vw;
+        }
+        div.swal2-actions{
+            button.swal2-confirm{
+                font-size: 2vw;
+                padding: 0.2vw 2.2vw;
+            }
+        }
+    }
+}//div.swal2-container
+
+}//@media (max-width: 1100px)
+
+@media (max-width: 950px) {
+
+    header.removeH1{
+
+        >div.contentsWrapper{
+            h1{
+
+            }
+
+            nav{
+                // justify-content: end;
+            }
+        }
+    };
+
+
+    button.topUpBtn{
+        right: 20px; bottom: 50px;
+    
+        width: 50px; height: 50px;
+        // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    
+        >i.icon{
+            width: 21px; height: 20.25px;
+            background: url(../img/icon_topUp.svg) center / 100% 100% no-repeat scroll;
+        }
+    
+    }//>button.topUpBtn
+}//@media (max-width: 950px)

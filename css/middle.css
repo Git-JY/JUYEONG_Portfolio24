@@ -1,0 +1,770 @@
+@charset "UTF-8";
+/* 1. 폰트들 */
+@font-face {
+  font-family: "The Jamsil 1";
+  src: url("../fonts/TheJamsil1Thin.woff2") format("woff2"), url("../fonts/TheJamsil1Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "The Jamsil 2";
+  src: url("../fonts/TheJamsil2Light.woff2") format("woff2"), url("../fonts/TheJamsil2Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "The Jamsil 3";
+  src: url("../fonts/TheJamsil3Regular.woff2") format("woff2"), url("../fonts/TheJamsil3Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "The Jamsil 4";
+  src: url("../fonts/TheJamsil4Medium.woff2") format("woff2"), url("../fonts/TheJamsil4Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "The Jamsil 5";
+  src: url("../fonts/TheJamsil5Bold.woff2") format("woff2"), url("../fonts/TheJamsil5Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "The Jamsil 6";
+  src: url("../fonts/TheJamsil6ExtraBold.woff2") format("woff2"), url("../fonts/TheJamsil6ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUIT Variable";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* 2. mixin */
+/* 3. 설정 리셋 */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "The Jamsil 1";
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+i {
+  font-style: normal;
+}
+
+/* 4. 컬러 */
+@media (max-width: 1100px) {
+  header {
+    width: 100%;
+    padding: 0px 10%;
+    background-color: white;
+    overflow: hidden;
+  }
+  header > div.contentsWrapper {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999999;
+  }
+  header > div.contentsWrapper > h1 {
+    width: 100%;
+    margin-top: 48px;
+    font-size: 4rem;
+    font-family: "The Jamsil 3";
+    color: black;
+    letter-spacing: 1.28px;
+    text-wrap: nowrap;
+  }
+  header > div.contentsWrapper > nav {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  header > div.contentsWrapper > nav > a {
+    height: 100%;
+    padding: 8px 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    font-family: "The Jamsil 2";
+    color: black;
+    text-wrap: nowrap;
+  }
+  header > div.contentsWrapper > nav > a:not(:last-child) {
+    margin-right: 35px;
+  }
+  header > div.contentsWrapper > nav > a:first-child {
+    color: white;
+    background-color: black;
+  }
+  section.sec_intro {
+    padding: 70px 10% 130px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  section.sec_intro > div.basic_intro {
+    height: 314px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.sec_intro > div.basic_intro > div {
+    flex-shrink: 0;
+  }
+  section.sec_intro > div.basic_intro > div.leftSide {
+    width: 270px;
+    height: 100%;
+    margin-right: 60px;
+  }
+  section.sec_intro > div.basic_intro > div.leftSide > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl > dt {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    margin-right: 14px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: inherit;
+    font-family: "The Jamsil 2";
+    color: black;
+    text-wrap: nowrap;
+    background: #EEE;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl > dd {
+    flex-shrink: 0;
+    font-size: inherit;
+    font-family: "The Jamsil 2";
+    color: #666666;
+    text-wrap: nowrap;
+  }
+  section.sec_intro > article.keyword_intro {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 90px;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border: 1px solid #999999;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName > h3 {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.25rem;
+    font-family: "The Jamsil 3";
+    color: black;
+    text-wrap: nowrap;
+    padding: 0px 20px;
+    background-color: white;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName > ul {
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName > ul > li {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #86C9EB;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.25rem;
+    font-family: "The Jamsil 3";
+    color: white;
+    text-wrap: nowrap;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: transform cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.1s, box-shadow cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.1s;
+    cursor: pointer;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName > ul > li:not(:last-child) {
+    margin-right: 75px;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName > ul > li > span {
+    font-family: "The Jamsil 3";
+  }
+  section.sec_intro > article.keyword_intro > div.keywordName > ul > li:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+    font-size: 1.5rem;
+    font-family: "The Jamsil 2";
+    color: #666666;
+    text-align: center;
+    line-height: 145.5%;
+    text-wrap: nowrap;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt b, section.sec_intro > article.keyword_intro > div.keywordTxt strong {
+    font-family: "The Jamsil 3";
+    color: black;
+    text-wrap: nowrap;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments > li:not(:last-child) {
+    margin-bottom: 38px;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt > span {
+    margin-top: 62px;
+  }
+  section.sec_skill {
+    padding: 80px 10% 104px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EEEEEE;
+  }
+  section.sec_skill article {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 20px;
+    background-color: white;
+  }
+  section.sec_skill article > h3, section.sec_skill article > div.titleWrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(0px, -50%);
+    padding: 8px 14px;
+    font-size: 2.25rem;
+    font-family: "The Jamsil 2";
+    color: black;
+    text-wrap: nowrap;
+    border-radius: 10px;
+    background-color: white;
+  }
+  section.sec_skill > div.allWrapper_skill {
+    width: 900px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 356px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill {
+    width: 50%;
+    height: 100%;
+    padding: 60px 20px 0px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > strong.period {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 14px 26px;
+    background: linear-gradient(90deg, #78D2FF 0%, #BBE8FF 100%);
+    border-radius: 30px;
+    font-size: 1.25rem;
+    font-family: "The Jamsil 2";
+    color: white;
+    letter-spacing: 1px;
+    text-wrap: nowrap;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > strong.period > mark {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transform: translate(0%, 50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px dashed #D05555;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    font-family: "The Jamsil 3";
+    color: #D05555;
+    text-wrap: nowrap;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > div.inforTxt {
+    margin: 15px 0px 0px 26px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > div.inforTxt > span {
+    font-size: 1.125rem;
+    font-family: "The Jamsil 3";
+    color: black;
+    line-height: 122%;
+    letter-spacing: 0.36px;
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill {
+    width: 45%;
+    height: 100%;
+    padding: 60px 40px 0px 34px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    margin-right: 30px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i > img {
+    width: 100%;
+    height: 100%;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-family: "The Jamsil 2";
+    color: black;
+    letter-spacing: 0.48px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p > span {
+    font-family: "The Jamsil 3";
+    text-wrap: nowrap;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p > b {
+    font-weight: normal;
+    font-family: "The Jamsil 3";
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill {
+    padding: 46px 90px 48px;
+    margin-top: 64px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > h3 {
+    font-size: 2.25rem;
+    font-family: "The Jamsil 2";
+    color: black;
+    text-wrap: nowrap;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 12px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input#skillIcon {
+    display: none;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label {
+    flex-shrink: 0;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 69px;
+    height: 32px;
+    padding: 6px 7px;
+    border-radius: 50px;
+    background-color: #D9D9D9;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label > span {
+    position: absolute;
+    top: 50%;
+    left: 42px;
+    z-index: 1;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    background-image: url(../img/icon_leftArrow.svg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: 0.2s;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label::before {
+    content: "TEXT";
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    z-index: 0;
+    transform: translateY(-50%);
+    font-family: "SUIT Variable";
+    font-size: 0.6rem;
+    font-weight: 900;
+    color: black;
+    letter-spacing: 0.24px;
+    text-wrap: nowrap;
+    transition: 0.2s;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label {
+    background-color: #78D2FF;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label > span {
+    left: 7px;
+    background-image: url(../img/icon_rightArrow.svg);
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label::before {
+    content: "ICON";
+    left: auto;
+    right: 13px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > h4 {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: "The Jamsil 2";
+    color: white;
+    letter-spacing: 0.8px;
+    text-wrap: nowrap;
+    background-color: #78D2FF;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup {
+    margin-top: 28px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li {
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 40px;
+    height: 100%;
+    margin-right: 17px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: left;
+       object-position: left;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > span.txtVer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "SUIT Variable";
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.24px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    display: none;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > div.gaugeBar {
+    width: 264px;
+    height: 57.5%;
+    border-radius: 10px;
+    background-color: #999999;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > div.gaugeBar > span.gauge {
+    display: inline-block;
+    width: 10%;
+    height: 100%;
+    background-color: #78D2FF;
+    border-radius: 10px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper > div.rightSide > div.backEndWrapper {
+    margin-bottom: 30px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill.OFF > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > img {
+    display: none;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill.OFF > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > span.txtVer {
+    display: inline-block;
+  }
+  section.sec_portfolio {
+    padding: 60px 10% 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  section.sec_portfolio > article.wrapper > h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.625rem;
+    font-family: "The Jamsil 3";
+    color: black;
+    letter-spacing: 0.84px;
+    text-wrap: nowrap;
+  }
+  section.sec_portfolio > article.wrapper > h2 > button.gitBtn {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    margin-left: 12px;
+    background: url(../img/icon_github.svg) center/100% 100% no-repeat scroll;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper {
+    margin-top: 27px;
+    width: 997px;
+    border-radius: 15px;
+    padding: 35px 0px 85px;
+    background: #93DBFF;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder:not(:last-child) {
+    margin-right: 30px;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > p.polderImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    padding: 11%;
+    background-color: white;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > p.polderImg > i.polderIcon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/icon_folder.svg) center/100% 100% no-repeat scroll;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > span {
+    font-size: 1.25rem;
+    font-family: "The Jamsil 3";
+    color: black;
+    letter-spacing: 0.4px;
+    text-wrap: nowrap;
+    margin-top: 10px;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -moz-column-gap: 7.8%;
+         column-gap: 7.8%;
+    row-gap: 26px;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    background: white;
+  }
+  footer {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer > a {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  footer > a > i.icon {
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.02));
+  }
+  footer > a.callBtn {
+    background-color: #3FA350;
+  }
+  footer > a.callBtn > i.icon {
+    background: url(../img/icon_call.svg) center/100% 100% no-repeat scroll;
+  }
+  footer > a.emailBtn {
+    background-color: #D9D9D9;
+  }
+  footer > a.emailBtn > i.icon {
+    background: url(../img/icon_email.svg) center/100% 100% no-repeat scroll;
+  }
+  footer > a.kakaoBtn {
+    background-color: #F9E000;
+  }
+  footer > a.kakaoBtn > i.icon {
+    width: 63px;
+    height: 57px;
+    background: url(../img/icon_kakao.svg) center/100% 100% no-repeat scroll;
+  }
+  button.topUpBtn {
+    position: fixed;
+    right: 30px;
+    bottom: 85px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  button.topUpBtn > i.icon {
+    width: 28px;
+    height: 27px;
+    background: url(../img/icon_topUp.svg) center/100% 100% no-repeat scroll;
+  }
+  div.kakaoQR {
+    position: fixed;
+    top: -110%;
+    left: 0px;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: top 0.2s;
+  }
+  div.kakaoQR > button.close {
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    background: url("../img/icon_close.svg") center/100% 100% no-repeat scroll;
+    opacity: 70%;
+  }
+  div.kakaoQR > div.wrapper {
+    width: 55%;
+    max-width: 600px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  div.kakaoQR > div.wrapper > span {
+    padding: 20px 7px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-family: "The Jamsil 2";
+    color: rgba(249, 224, 0, 0.9);
+    letter-spacing: 3.2px;
+    text-wrap: nowrap;
+    background-color: #441D00;
+  }
+  div.kakaoQR > div.wrapper > i {
+    display: inline-block;
+    width: 100%;
+  }
+  div.kakaoQR > div.wrapper > i > img {
+    width: 100%;
+  }
+  div.kakaoQR.on {
+    top: 0%;
+    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.7);
+  }
+}/*# sourceMappingURL=middle.css.map */

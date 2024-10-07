@@ -1,0 +1,154 @@
+/* 1. 폰트들 */
+@font-face {
+    font-family: 'The Jamsil 1';
+    src: url('../fonts/TheJamsil1Thin.woff2') format('woff2'),
+        url('../fonts/TheJamsil1Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 2';
+    src: url('../fonts/TheJamsil2Light.woff2') format('woff2'),
+        url('../fonts/TheJamsil2Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 3';
+    src: url('../fonts/TheJamsil3Regular.woff2') format('woff2'),
+        url('../fonts/TheJamsil3Regular.woff') format('woff');
+    font-weight: normal; //400
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 4';
+    src: url('../fonts/TheJamsil4Medium.woff2') format('woff2'),
+        url('../fonts/TheJamsil4Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 5';
+    src: url('../fonts/TheJamsil5Bold.woff2') format('woff2'),
+        url('../fonts/TheJamsil5Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Jamsil 6';
+    src: url('../fonts/TheJamsil6ExtraBold.woff2') format('woff2'),
+        url('../fonts/TheJamsil6ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+//굵기가 이상함
+// @font-face {
+//     font-family: 'SUIT Variable';
+//     src: url('../fonts/SUITVariableThin.woff2') format('woff2'),
+//         url('../fonts/SUITVariableThin.woff') format('woff');
+//     font-weight: 100;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+@font-face {
+    font-family: "SUIT Variable";
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+}
+
+//---------- ---------- ---------- ---------- ----------
+/* 2. mixin */
+@mixin flex($x: center, $y: center){
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+
+    @content;
+}
+
+@mixin font($a: inherit, $b: inherit, $c: inherit){
+    font-size: $a;
+    font-family: $b;
+    color: $c;
+
+    @content;
+}
+
+@mixin text(){
+    word-break: keep-all;
+    word-wrap: break-word;
+
+    @content;
+}
+
+$fw1: 'The Jamsil 1';
+$fw2: 'The Jamsil 2';
+$fw3: 'The Jamsil 3';
+$fw4: 'The Jamsil 4';
+$fw5: 'The Jamsil 5';
+$fw1: 'The Jamsil 6';
+
+$pd: 10%; //pc에서의 padding
+$pd_middle: 5%; //middle에서의 padding
+
+//---------- ---------- ---------- ---------- ----------
+/* 3. 설정 리셋 */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'The Jamsil 1';
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}
+
+img{
+    vertical-align: middle;
+}
+
+li{
+    list-style: none;
+}
+
+i{
+    font-style: normal;
+}
+//---------- ---------- ---------- ---------- ----------
+/* 4. 컬러 */
+
+$mainColor: #78D2FF;
+
+$subColor1: #BBE8FF;
+$subColor2: #93DBFF;
+$subColor3: #86C9EB;
+
+$grayColor1: #EEEEEE;
+$grayColor2: #D9D9D9;
+$grayColor3: #999999;
+$grayColor4: #666666;
+
+
+
+
+
+
+
+
