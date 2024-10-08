@@ -899,23 +899,33 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     padding: 23.9vw 5% 10vw;
   }
   section.sec_intro > div.basic_intro {
-    height: 30vw;
+    height: 45vw;
   }
   section.sec_intro > div.basic_intro > div.leftSide {
-    width: 25vw;
+    width: 37.5vw;
     margin-right: 5.5vw;
   }
+  section.sec_intro > div.basic_intro > div.rightSide {
+    width: 37vw;
+  }
   section.sec_intro > div.basic_intro > div.rightSide > dl {
-    font-size: 2.4vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2.6vw;
   }
   section.sec_intro > div.basic_intro > div.rightSide > dl:not(:last-child) {
     margin-bottom: 2vw;
   }
   section.sec_intro > div.basic_intro > div.rightSide > dl > dt {
-    width: 10vw;
-    height: 5vw;
-    border-radius: 1.5vw;
-    margin-right: 1.4vw;
+    width: 100%;
+    height: 4.5vw;
+    border-radius: 1vw;
+    margin-right: 0px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl > dd {
+    margin-top: 1.5vw;
   }
   section.sec_intro > article.keyword_intro {
     margin-top: 9vw;
@@ -928,22 +938,22 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     margin: 5vw 0px;
   }
   section.sec_intro > article.keyword_intro > div.keywordName > ul > li {
-    width: 18vw;
-    height: 18vw;
-    font-size: 3.6vw;
+    width: 20vw;
+    height: 20vw;
+    font-size: 3.8vw;
   }
   section.sec_intro > article.keyword_intro > div.keywordName > ul > li:not(:last-child) {
     margin-right: 7.5vw;
   }
   section.sec_intro > article.keyword_intro > div.keywordTxt {
-    margin-top: 6vw;
-    font-size: 2.4vw;
+    margin-top: 8vw;
+    font-size: 3vw;
   }
   section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments > li:not(:last-child) {
-    margin-bottom: 3.8vw;
+    margin-bottom: 4.5vw;
   }
   section.sec_intro > article.keyword_intro > div.keywordTxt > span {
-    margin-top: 6.2vw;
+    margin-top: 8vw;
   }
   section.sec_skill {
     padding: 8vw 5% 10.4vw;

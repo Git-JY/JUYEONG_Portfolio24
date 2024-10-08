@@ -70,14 +70,15 @@ section.sec_intro{
     // 사진 + (이름~이메일)
     >div.basic_intro{
         // outline: 1px solid red;
-        height: 30vw;
+        height: 45vw;
 
         //공통 div(.leftSide, .rightSide)
         >div{
 
             &.leftSide{//프로필 사진
                 // outline: 1px solid red;
-                width: 25vw;
+                // width: 25vw;
+                width: 37.5vw;
                 margin-right: 5.5vw;
     
                 >img{
@@ -86,8 +87,12 @@ section.sec_intro{
     
             &.rightSide{//글귀
                 // outline: 1px solid red;
+                width: 37vw;
                 >dl{
-                    font-size: 2.4vw;
+                    @include flex(flex-start, center){
+                        flex-direction: column;
+                    };
+                    font-size: 2.6vw;
     
                     &:not(:last-child){
                         margin-bottom: 2vw;
@@ -95,12 +100,13 @@ section.sec_intro{
     
                     >dt{
                         // outline: 1px solid red;
-                        width: 10vw; height: 5vw;
-                        border-radius: 1.5vw;
-                        margin-right: 1.4vw;
+                        width: 100%; height: 4.5vw;
+                        border-radius: 1vw;
+                        margin-right: 0px;
                     }//>dt
     
                     >dd{
+                        margin-top: 1.5vw;
                     }//>dd
                 }//>dl
             }//&.rightSide
@@ -128,8 +134,8 @@ section.sec_intro{
 
                 >li{
                     // outline: 1px solid red;
-                    width: 18vw; height: 18vw;
-                    font-size: 3.6vw;
+                    width: 20vw; height: 20vw;
+                    font-size: 3.8vw;
                     &:not(:last-child){
                         margin-right: 7.5vw;
                     }
@@ -146,9 +152,9 @@ section.sec_intro{
         }//>div.keywordName
 
         >div.keywordTxt{
-            margin-top: 6vw;
+            margin-top: 8vw;
             
-            font-size: 2.4vw;
+            font-size: 3vw;
 
             //공통
             b, strong{
@@ -158,7 +164,7 @@ section.sec_intro{
 
                 >li{
                     &:not(:last-child){
-                        margin-bottom: 3.8vw;
+                        margin-bottom: 4.5vw;
                     }
 
                     >b{
@@ -168,7 +174,7 @@ section.sec_intro{
             }//>ul.keywordComments
 
             >span{
-                margin-top: 6.2vw;
+                margin-top: 8vw;
                 >strong{
                 }
             }//>span
