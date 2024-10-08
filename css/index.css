@@ -1020,6 +1020,9 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label::before {
     left: 1.3vw;
     font-size: 0.96vw;
+    -webkit-text-size-adjust: none;
+       -moz-text-size-adjust: none;
+            text-size-adjust: none;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label > span {
     left: 0.7vw;
