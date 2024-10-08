@@ -59,7 +59,6 @@ header{
             h1{
             }
             >nav{
-                justify-content: flex-end;
             }
         }
     };
@@ -310,54 +309,56 @@ section.sec_skill{
             padding: 4.6vw 9vw 4.8vw;
             margin-top: 6.4vw;
     
-            >div.titleWrapper{
+            // >div.titleWrapper{
                 
                 >h3{
                     font-size: 3.6vw;
                 }//>h3
 
-                >div.skillIconWrappper{//체크박스 + 스킬아이콘 토글버튼
-                    margin-left: 1.2vw;
+                >div.skillIcon_whiteBg{
+                    padding: 1vw 1vw 0px; 
+                    border-radius: 1vw;
 
-                    input#skillIcon{
-                    }
+                    >div.skillIconWrappper{//체크박스 + 스킬아이콘 토글버튼
+                        // margin-left: 1.2vw;
 
-                    >label{//스킬아이콘 토글버튼
-                        width: 6.9vw; height: 3.2vw;
-                        padding: 0.6vw 0.7vw;
-                        border-radius: 5vw;
-                        
-                        >span{//동그라미
-                            //(전체너비69px - 몸통너비 20px - 패딩 7px)
-                            left: 4.2vw;
+                        input#skillIcon{
+                        }
+
+                        >label{//스킬아이콘 토글버튼
+                            width: 6.9vw; height: 3.2vw;
+                            padding: 0.6vw 0.7vw;
+                            border-radius: 5vw;
                             
-                            width: 2.0vw; height: 2.0vw;
-                            // box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.10);
-                        }
+                            >span{//동그라미
+                                //(전체너비69px - 몸통너비 20px - 패딩 7px)
+                                left: 4.2vw;
+                                
+                                width: 2.0vw; height: 2.0vw;
+                                // box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.10);
+                            }
 
-                        &::before{//글귀
-                            left: 1.3vw;
+                            &::before{//글귀
+                                left: 1.3vw;
 
-                            font-size: 0.96vw;
-                        }
-                    }//>label
-                    input:checked + label{
+                                font-size: 0.96vw;
+                            }
+                        }//>label
+                        input:checked + label{
 
-                        >span{                           
-                            left: 0.7vw;
-                        }
+                            >span{                           
+                                left: 0.7vw;
+                            }
 
-                        &::before{
-                            right: 1.3vw;
-                        }
+                            &::before{
+                                right: 1.3vw;
+                            }
 
-                    }//input:checked + label
-                }//>div.skillIconWrappper
+                        }//input:checked + label
+                    }//>div.skillIconWrappper
+                }//>div.skillIcon_whiteBg{
 
-                // &.mobile{
-                    left: auto; right: 0px;
-                // }
-            }//div.titleWrapper
+            // }//div.titleWrapper
     
             >div.contentsWrapper{
                 // outline: 1px solid violet;
@@ -561,7 +562,6 @@ section.sec_portfolio{
     // outline: 1px solid blueviolet;
 
     padding: 6vw 0px 12vw; 
-    // padding: 6vw $pd_middle 12vw; ///////////
 
     >article.wrapper{
         // outline: 1px solid pink;
@@ -592,8 +592,6 @@ section.sec_portfolio{
             margin-top: 2.7vw;
             
             width: 100%;
-            // width: 99.7vw; ///////////
-            // border-radius: 1.5vw; //////////
             border-radius: 0px;
             padding: 3.5vw 0px 8.5vw;
 
@@ -806,6 +804,95 @@ div.swal2-container{
         }
     };
 
+
+
+    section.sec_portfolio{
+        // outline: 1px solid blueviolet;
+    
+        >article.wrapper{
+            // outline: 1px solid pink;
+            
+            >h2{
+                // outline: 1px solid red;
+    
+                font-size: 5vw;
+    
+                >button.gitBtn{
+                    // outline: 1px solid red;
+    
+                    width: 5vw;  height: 5vw;
+                    margin-left: 1.2vw;
+    
+                }//>button.gitBtn
+    
+            }//>h2
+    
+            //하늘색 포트폴리오 묶음
+            >div.contentsWrapper{
+                // outline: 1px solid red;
+    
+                margin-top: 3vw;
+                
+                width: 100%;
+                padding: 5vw 0px 8.5vw;
+    
+                >nav.polderMenu{
+    
+                    >a.polder{
+                        // outline: 1px solid red;
+                        &:not(:last-child){
+                            margin-right: 4vw;
+                        }
+    
+                        cursor: pointer;
+    
+                        >p.polderImg{//흰 배경
+                            // outline: 1px solid red;
+    
+                            width: 9vw; height: 9vw;
+                            border-radius: 1.5vw; 
+    
+                            >i.polderIcon{//폴더 아이콘
+                            }//>i.polderIcon
+    
+                        }//>p.polderImg
+    
+                        >span{
+                            font-size: 2.5vw;
+                            // @include font(20px, $fw3, black){
+                            //     letter-spacing: 0.4px;
+                            //     text-wrap: nowrap;
+                            // }
+                            // margin-top: 1vw;
+                        }//>span
+    
+                    }//>a.polder
+    
+                }//>nav.polderMenu
+    
+                >ul.portfolioContents{//포트폴리오 네모박스 모음
+                    // outline: 1px solid red;
+    
+                    margin-top: 6vw;
+                    // margin-top: 2.5vw;//////////////
+    
+                    column-gap: 7%; row-gap: 4vw;
+    
+                    >li{//포트폴리오 하나 네모박스
+                        // outline: 1px solid red;
+    
+                        width: 35vw; height: 35vw; ////////
+                        // width: 20vw; height: 20vw;
+                        border-radius: 1vw;
+                    }//>li
+    
+                }//>ul.portfolioContents
+    
+            }//>div.contentsWrapper
+    
+        }//>article.wrapper
+    
+    }//section.sec_portfolio
 
     button.topUpBtn{
         right: 20px; bottom: 50px;

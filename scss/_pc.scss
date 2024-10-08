@@ -319,7 +319,7 @@ section.sec_skill{
         border-radius: 20px;
         background-color: white;
 
-        >h3, >div.titleWrapper{
+        >h3{ //, >div.titleWrapper
             // absolute라서 알아서 inline-block됨
             position: absolute; top: 0px; left: 0px; 
             transform: translate(0px, -50%);
@@ -479,32 +479,41 @@ section.sec_skill{
             padding: 46px 90px 48px;
             margin-top: 64px;
     
-            >div.titleWrapper{
-                @include flex(flex-start);
+            // >div.titleWrapper{
+            //     @include flex(flex-start);
 
-                >h3{
-                    @include font(2.25rem, $fw2, black){
-                        text-wrap: nowrap;
-                    }
-                }//>h3
+            >h3{
+                @include font(2.25rem, $fw2, black){
+                    text-wrap: nowrap;
+                }
+            }//>h3
+
+            >div.skillIcon_whiteBg{
+                position: absolute; top: 0px; right: 0px;
+                transform: translateY(-30%);
+                padding: 10px 10px 0px; 
+                border-radius: 10px;
+
+                background-color: white;
 
                 >div.skillIconWrappper{//체크박스 + 스킬아이콘 토글버튼
+    
                     @include flex(flex-start);
-                    margin-left: 12px;
-
+                    // margin-left: 12px;
+    
                     input#skillIcon{
                         display: none;
                     }
-
+    
                     >label{//스킬아이콘 토글버튼
                         flex-shrink: 0; 
-
+    
                         position: relative; top: 0px; left: 0px; z-index: 0;
                         width: 69px; height: 32px;
                         padding: 6px 7px;
                         border-radius: 50px;
                         background-color: $grayColor2;
-
+    
                         transition: 0.2s;
                         cursor: pointer;
                         
@@ -524,39 +533,40 @@ section.sec_skill{
                             
                             transition: 0.2s;
                         }
-
+    
                         &::before{//글귀
                             content: 'TEXT';
                             position: absolute; top: 50%; left: 13px; z-index: 0;
                             transform: translateY(-50%);
                             
-                            font-family: 'SUIT Variable';
+                            // font-family: 'SUIT Variable';
                             font-size: 0.6rem;
                             font-weight: 900;
                             color: black;
                             letter-spacing: 0.24px;
                             text-wrap: nowrap;
-
+    
                             transition: 0.2s;
                         }
                     }//>label
                     input:checked + label{
                         background-color: $mainColor;
-
+    
                         >span{                           
                             left: 7px;
                             background-image: url(../img/icon_rightArrow.svg);
                         }
-
+    
                         &::before{
                             content: 'ICON';
                             left: auto; right: 13px;
                         }
-
+    
                     }//input:checked + label
                 }//>div.skillIconWrappper
+            }//>div.skillIcon_whiteBg
 
-            }//div.titleWrapper
+            // }//div.titleWrapper
     
             >div.contentsWrapper{
                 // outline: 1px solid violet;
@@ -613,7 +623,7 @@ section.sec_skill{
                                     position: absolute; top: 50%; left: 50%;
                                     transform: translate(-50%, -50%);
 
-                                    font-family: 'SUIT Variable';
+                                    // font-family: 'SUIT Variable';
                                     font-size: 0.75rem;
                                     font-weight: 900;
                                     letter-spacing: 0.24px;
@@ -628,7 +638,7 @@ section.sec_skill{
                             >div.gaugeBar{
                                 width: 264px; height: 57.5%;
                                 border-radius: 10px; 
-                                background-color: $grayColor3;
+                                background-color: #EBEBEB;
 
                                 @include flex(flex-start);
 
@@ -638,7 +648,7 @@ section.sec_skill{
                                 >span.gauge{
                                     display: inline-block;
                                     width: 0%; height: 100%;
-                                    background-color: $mainColor;
+                                    background: linear-gradient(90deg, #C4EBFF 0%, #51BCF3 100%);
                                     border-radius: 10px;
 
                                     transition: width 1s;

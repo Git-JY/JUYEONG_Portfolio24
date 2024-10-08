@@ -335,7 +335,7 @@ section.sec_skill article {
   border-radius: 20px;
   background-color: white;
 }
-section.sec_skill article > h3, section.sec_skill article > div.titleWrapper {
+section.sec_skill article > h3 {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -467,27 +467,30 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill {
   padding: 46px 90px 48px;
   margin-top: 64px;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > h3 {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > h3 {
   font-size: 2.25rem;
   font-family: "The Jamsil 2";
   color: black;
   text-wrap: nowrap;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transform: translateY(-30%);
+  padding: 10px 10px 0px;
+  border-radius: 10px;
+  background-color: white;
+}
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 12px;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input#skillIcon {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input#skillIcon {
   display: none;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label {
   flex-shrink: 0;
   position: relative;
   top: 0px;
@@ -501,7 +504,7 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrappe
   transition: 0.2s;
   cursor: pointer;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label > span {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label > span {
   position: absolute;
   top: 50%;
   left: 42px;
@@ -518,14 +521,13 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrappe
   background-repeat: no-repeat;
   transition: 0.2s;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label::before {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label::before {
   content: "TEXT";
   position: absolute;
   top: 50%;
   left: 13px;
   z-index: 0;
   transform: translateY(-50%);
-  font-family: "SUIT Variable";
   font-size: 0.6rem;
   font-weight: 900;
   color: black;
@@ -533,14 +535,14 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrappe
   text-wrap: nowrap;
   transition: 0.2s;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label {
   background-color: #78D2FF;
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label > span {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label > span {
   left: 7px;
   background-image: url(../img/icon_rightArrow.svg);
 }
-section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label::before {
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label::before {
   content: "ICON";
   left: auto;
   right: 13px;
@@ -595,7 +597,6 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWra
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "SUIT Variable";
   font-size: 0.75rem;
   font-weight: 900;
   letter-spacing: 0.24px;
@@ -606,7 +607,7 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWra
   width: 264px;
   height: 57.5%;
   border-radius: 10px;
-  background-color: #999999;
+  background-color: #EBEBEB;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -617,7 +618,7 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWra
   display: inline-block;
   width: 0%;
   height: 100%;
-  background-color: #78D2FF;
+  background: linear-gradient(90deg, #C4EBFF 0%, #51BCF3 100%);
   border-radius: 10px;
   transition: width 1s;
 }
@@ -894,9 +895,6 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   header > div.contentsWrapper > nav > a:not(:last-child) {
     margin-right: 2.5vw;
   }
-  header.removeH1 > div.contentsWrapper > nav {
-    justify-content: flex-end;
-  }
   section.sec_intro {
     padding: 23.9vw 5% 10vw;
   }
@@ -1008,35 +1006,32 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     padding: 4.6vw 9vw 4.8vw;
     margin-top: 6.4vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper {
-    left: auto;
-    right: 0px;
-  }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > h3 {
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > h3 {
     font-size: 3.6vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper {
-    margin-left: 1.2vw;
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg {
+    padding: 1vw 1vw 0px;
+    border-radius: 1vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label {
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label {
     width: 6.9vw;
     height: 3.2vw;
     padding: 0.6vw 0.7vw;
     border-radius: 5vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label > span {
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label > span {
     left: 4.2vw;
     width: 2vw;
     height: 2vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label::before {
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label::before {
     left: 1.3vw;
     font-size: 0.96vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label > span {
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label > span {
     left: 0.7vw;
   }
-  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label::before {
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label::before {
     right: 1.3vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > h4 {
@@ -1172,6 +1167,44 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   }
 }
 @media (max-width: 950px) {
+  section.sec_portfolio > article.wrapper > h2 {
+    font-size: 5vw;
+  }
+  section.sec_portfolio > article.wrapper > h2 > button.gitBtn {
+    width: 5vw;
+    height: 5vw;
+    margin-left: 1.2vw;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper {
+    margin-top: 3vw;
+    width: 100%;
+    padding: 5vw 0px 8.5vw;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder {
+    cursor: pointer;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder:not(:last-child) {
+    margin-right: 4vw;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > p.polderImg {
+    width: 9vw;
+    height: 9vw;
+    border-radius: 1.5vw;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > span {
+    font-size: 2.5vw;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents {
+    margin-top: 6vw;
+    -moz-column-gap: 7%;
+         column-gap: 7%;
+    row-gap: 4vw;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li {
+    width: 35vw;
+    height: 35vw;
+    border-radius: 1vw;
+  }
   button.topUpBtn {
     right: 20px;
     bottom: 50px;
