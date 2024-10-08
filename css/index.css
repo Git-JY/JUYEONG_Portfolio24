@@ -77,6 +77,11 @@ i {
 /* 4. 컬러 */
 body {
   background-color: white;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none; /* 크롬, 사파리, 오페라 신버전 */
+  -ms-text-size-adjust: none; /* IE */
+  -moz-text-size-adjust: none; /* 파이어폭스 */
+  -o-text-size-adjust: none; /* 오페라 구버전 */
 }
 body.noScroll {
   height: 100%;
@@ -871,7 +876,7 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     padding: 0px 5%;
   }
   header > div.contentsWrapper {
-    padding-bottom: 1vw;
+    padding-bottom: 3.5vw;
   }
   header > div.contentsWrapper > h1 {
     margin-top: 3vw;
@@ -879,15 +884,18 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   }
   header > div.contentsWrapper > nav {
     height: 4vw;
-    margin-top: 1vw;
+    margin-top: 3.5vw;
   }
   header > div.contentsWrapper > nav > a {
-    padding: 1vw;
-    border-radius: 2vw;
-    font-size: 3vw;
+    padding: 3.5vw 2vw;
+    border-radius: 6vw;
+    font-size: 5vw;
   }
   header > div.contentsWrapper > nav > a:not(:last-child) {
     margin-right: 2.5vw;
+  }
+  header.removeH1 > div.contentsWrapper > nav {
+    justify-content: flex-end;
   }
   section.sec_intro {
     padding: 23.9vw 5% 10vw;
@@ -1000,6 +1008,10 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     padding: 4.6vw 9vw 4.8vw;
     margin-top: 6.4vw;
   }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper {
+    left: auto;
+    right: 0px;
+  }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > h3 {
     font-size: 3.6vw;
   }
@@ -1020,9 +1032,6 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper > label::before {
     left: 1.3vw;
     font-size: 0.96vw;
-    -webkit-text-size-adjust: none;
-       -moz-text-size-adjust: none;
-            text-size-adjust: none;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.titleWrapper > div.skillIconWrappper input:checked + label > span {
     left: 0.7vw;

@@ -17,7 +17,7 @@ header{
 
     >div.contentsWrapper{
         // outline: 1px solid blue;
-        padding-bottom: 1vw;
+        padding-bottom: 3.5vw;
 
         >h1{
             // outline: 1px solid red;
@@ -32,17 +32,17 @@ header{
         >nav{
             // outline: 1px solid red;
             height: 4vw;
-            margin-top: 1vw;
+            margin-top: 3.5vw;
     
             >a{
                 // outline: 1px solid red;
-                padding: 1vw;
-                border-radius: 2vw;
+                padding: 3.5vw 2vw;
+                border-radius: 6vw;
                 
                 // @include font(1.75rem, $fw2, black){
                 //     text-wrap: nowrap;
                 // };
-                font-size: 3vw;
+                font-size: 5vw;
 
                 &:not(:last-child){
                     margin-right: 2.5vw;
@@ -51,6 +51,18 @@ header{
         }//>nav
 
     }//>div.contentsWrapper
+
+
+    &.removeH1{
+
+        >div.contentsWrapper{
+            h1{
+            }
+            >nav{
+                justify-content: flex-end;
+            }
+        }
+    };
 }//header
 
 section.sec_intro{ 
@@ -299,6 +311,7 @@ section.sec_skill{
             margin-top: 6.4vw;
     
             >div.titleWrapper{
+                
                 >h3{
                     font-size: 3.6vw;
                 }//>h3
@@ -326,9 +339,6 @@ section.sec_skill{
                             left: 1.3vw;
 
                             font-size: 0.96vw;
-                            text-size-adjust: none;
-                            // letter-spacing: 0.24px;
-
                         }
                     }//>label
                     input:checked + label{
@@ -344,6 +354,9 @@ section.sec_skill{
                     }//input:checked + label
                 }//>div.skillIconWrappper
 
+                // &.mobile{
+                    left: auto; right: 0px;
+                // }
             }//div.titleWrapper
     
             >div.contentsWrapper{

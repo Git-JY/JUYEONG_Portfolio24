@@ -5,6 +5,13 @@
 body{
     background-color: white;
 
+    text-size-adjust: none;
+    // letter-spacing: 0.24px;
+    -webkit-text-size-adjust : none;  /* 크롬, 사파리, 오페라 신버전 */
+    -ms-text-size-adjust : none;  /* IE */
+    -moz-text-size-adjust : none;  /* 파이어폭스 */
+    -o-text-size-adjust : none;  /* 오페라 구버전 */
+    
     &.noScroll{
         height: 100%;
         overflow: hidden;
@@ -474,6 +481,7 @@ section.sec_skill{
     
             >div.titleWrapper{
                 @include flex(flex-start);
+
                 >h3{
                     @include font(2.25rem, $fw2, black){
                         text-wrap: nowrap;
