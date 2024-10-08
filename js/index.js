@@ -80,7 +80,8 @@ elcloseBtn = elKakaoQR.querySelector('button.close'); // 카카오 QR X버튼
 
 
 //경우 2 fetch)
-fetch("../myJson/mySkill.json", {
+// fetch("../myJson/mySkill.json", {
+fetch("myJson/mySkill.json", {
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
