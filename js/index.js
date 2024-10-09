@@ -3,82 +3,18 @@ elHeader = elbody.querySelector('header'), // 헤더 전체
 elHeaderA = elHeader.querySelectorAll('a'), // 소개 보유능력 포트폴리오
 el_secAll = elbody.querySelectorAll('section'), //sec 전부
 // elKeywordLiAll = el_secAll[0].querySelectorAll('div.keywordName>ul>li'),
-el_artic_skill = el_secAll[1].querySelector('section.sec_skill article.skill_skill'), //스킬 sec의 skill 박스
+el_artic_skill = el_secAll[1].querySelector('article.skill_skill'), //스킬 sec의 skill 박스
 elUl_skillAll = el_artic_skill.querySelectorAll('ul.skillGroup'), // 스킬박스의 각 그룹
 elCheck_SkillIcon = el_artic_skill.querySelector('input#skillIcon'), // 스킬 체크박스
+elA_pofolAll = el_secAll[2].querySelectorAll('div.contentsWrapper>nav.polderMenu>a.polder'), // 포폴 폴더 메뉴
+elUl_pofol = el_secAll[2].querySelector('div.contentsWrapper>ul.portfolioContents'), // 포폴 Ul
 elTopBtn = elbody.querySelector('button.topUpBtn'), // 탑버튼
 elFooter = elbody.querySelector('footer'), // 푸터버튼
 elCallA = elFooter.querySelector('a.callBtn'), // 전화버튼
 elkakaoA = elFooter.querySelector('a.kakaoBtn'), // 카카오버튼
 elKakaoQR = elbody.querySelector('div.kakaoQR'), // 내려오는 카카오 QR전체
+elKakaoCopyBtn = elKakaoQR.querySelector('div.kakoIDCopy button.copyBtn'), // 카카오 카피버튼
 elcloseBtn = elKakaoQR.querySelector('button.close'); // 카카오 QR X버튼
-
-// //경우 1 ajax)
-// $.ajax({
-//     url: "../myJson/mySkill.json",
-//     success: function(skillObj) {
-//         const keys = Object.keys(skillObj);
-//             const widthAll = []; // 게이지의 width값을 2차배열로 저장할 배열변수
-        
-//             elUl_skillAll.forEach((elUl, k) => {
-//                 let tag = '';
-//                 const ulWidthAll = []; // 2차배열에 각 요소로 넣을 임시 배열변수
-        
-//                 // "frontEnd" 배열(k=0), "backEnd" 배열(k=1), "etc" 배열(k=2)
-//                 skillObj[keys[k]].forEach((liInfo)=>{ 
-//                     tag += `<li title=${liInfo.name}>
-//                                 <i>
-//                                     <img src=${liInfo.img} alt=${liInfo.name}>
-//                                     <span class="txtVer
-//                                     ">${liInfo.name}</span>
-//                                 </i>
-//                                 <div class="gaugeBar">
-//                                     <span class="gauge" style="width: 0%"></span>
-//                                 </div>
-//                             </li>`;
-        
-//                     ulWidthAll.push(liInfo.proficiency);
-//                 });
-//                 widthAll.push(ulWidthAll);
-        
-//                 elUl.innerHTML = tag;
-//             });//elUl_skillAll.forEach((elUl, k)
-        
-//             // 마주칠 때 게이지 채우기
-//             const options = {
-//                 threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
-//             }
-        
-//             const io = new IntersectionObserver((entries, observer) => {
-//                 entries.forEach(entry =>{
-        
-//                     if(entry.isIntersecting){
-//                         elUl_skillAll.forEach((elUl, k1) => {
-//                             elUl.querySelectorAll('li span.gauge').forEach((elSpan, k2) => {
-//                                 elSpan.style.width = widthAll[k1][k2] + '%';
-//                             })
-//                         });//elUl_skillAll.forEach((elUl, k1) => {
-        
-//                         observer.unobserve(el_artic_skill);
-//                     }//if(entry.isIntersecting)
-        
-//                 })
-//             }, options)//const io = new IntersectionObserver
-//             io.observe(el_artic_skill);
-            
-//             // 스킬아이콘 토글버튼 체크박스 change이벤트
-//             elCheck_SkillIcon.onchange = (e) => {
-//                 if(e.target.checked){
-//                     el_artic_skill.classList.remove('OFF');
-//                 }else{
-//                     el_artic_skill.classList.add('OFF');
-//                 }
-        
-//             }//elCheck_SkillIcon.onchange
-//     }
-//   });
-
-
 //경우 2 fetch)
 // fetch("../myJson/mySkill.json", {
 fetch("./myJson/mySkill.json", {
@@ -260,11 +196,100 @@ window.addEventListener('scroll', () => {
 	}, 30); //0.3초씩 감지
 })//window.addEventListener('scroll', () => {
 
+fetch("./myJson/portfolio.json", {
+    headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    }
+    })
+    .then(res => res.json())
+    .then((pofolObj)=>{
+
+    const pofolMenuFun = (menuName) => { 
+        elUl_pofol.innerHTML = '';
+
+        if(menuName == "all"){
+            for(let keyName in pofolObj){
+                pofolObj[keyName].forEach((obj)=>{
+                    elUl_pofol.innerHTML += 
+                    `<li>
+                        <a class="contentsWrapper" href="${obj.url}" target="_blank">
+                            <strong>${obj.name}</strong>
+                        </a>
+                        <i class="bg">
+                            <img src="${obj.img}" alt="${obj.name}">
+                        </i>
+                    </li>`;
+                })
+            }//for(let keyName in pofolObj)
+
+        }else{
+            pofolObj[menuName].forEach((obj)=>{
+                elUl_pofol.innerHTML += 
+                `<li>
+                    <a class="contentsWrapper" href="${obj.url}">
+                        <strong>${obj.name}</strong>
+                    </a>
+                    <i class="bg">
+                        <img src="${obj.img}" alt="${obj.name}">
+                    </i>
+                </li>`;
+            })//pofolObj[menuName].forEach((obj)=>{
+
+            console.log(pofolObj[menuName].length);
+            if(pofolObj[menuName].length < 6){
+                let rest = 6 - pofolObj[menuName].length;
+
+                for(let i = 1; i <= rest; i++){
+                    elUl_pofol.innerHTML += "<li class='empty'></li>";
+                }
+            }//if(pofolObj[menuName].length < 6)
+        }
+    }//pofolMenuFun() 함수정의
+
+    pofolMenuFun('all');
+
+    // elA_pofolAll // elUl_pofol
+    elA_pofolAll.forEach((elA, k) => {
+        elA.onclick = (e) => {
+            e.preventDefault();
+
+            pofolMenuFun(elA.dataset['name']);
+        }
+    })//elA_pofolAll.forEach((elA, k)
+
+    console.log('pofolObj');
+    console.log(pofolObj);
+})//.then((skillObj)=>{
+
 // 카카오 열기 버튼
 elkakaoA.onclick = () => {
     elKakaoQR.classList.add('on');
     elbody.classList.add('noScroll');
 }//elkakaoA.onclick
+
+//카카오 카피 버튼
+elKakaoCopyBtn.onclick = () => {
+    window.navigator.clipboard.writeText('kakajy123')
+    .then(()=>{
+        {
+            Swal.fire({
+                title: "카피 완료",
+                text: "카피가 완료되었습니다.",
+                confirmButtonText: "확인"
+              });
+        }
+    })
+    .catch(()=>{
+        {
+            Swal.fire({
+                title: "카피 실패",
+                text: "카피가 실패되었습니다.",
+                confirmButtonText: "확인"
+              });
+        }
+    })
+}//elKakaoCopyBtn.onclick
 
 // 카카오 닫기 버튼
 elcloseBtn.onclick = () => {

@@ -1,0 +1,16 @@
+1.) title border 확인 o
+2.) 글귀 왼쪽 버튼 오른쪽, o 
+3.) 글씨크기 suit x
+4.) 포트폴리오 버튼 키우기 o
+5.) 메뉴통일 o
+6.) 카카오 수정 필요, X크기 키우고 내리기 x
+7.) 포트폴리오 연 x
+
+	        <li>
+                        <a class="contentsWrapper" href="${obj.url}">
+                            <strong>${obj.name}</strong>
+                        </a>
+                        <i class="bg">
+                            <img src="" alt="${obj.name}">
+                        </i>
+                    </li>

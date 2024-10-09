@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leejuyeong</title>
     <!-- 파비콘 -->
-    <link rel="icon" type="image/png" href="./img/favicon/favicon32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="./img/favicon/favicon16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-16x16.png" sizes="16x16" />
     <!-- 오픈그래프 -->
      <meta property="og:title" content="프론트엔드 이주영 포트폴리오" />
      <!-- <meta property="og:url" content="이주영 프론트엔드 포트폴리오" /> -->
-     <meta property="og:img" content="./img/favicon/img_JU.png" />
+     <meta property="og:image" content="./img/openGraph.jpg" />
      <meta property="og:description" content="프론트엔드 이주영의 포트폴리오 입니다." />
 
      <!-- 트위터 전용 오픈그래프 -->
      <meta name="twitter:card" content="프론트엔드 이주영 포트폴리오" />
      <meta name="twitter:title" content="프론트엔드 이주영 포트폴리오" />
      <!-- <meta name="twitter:url" content="summary" /> -->
-     <meta name="twitter:image" content="./img/favicon/img_JU.png" />
+     <meta name="twitter:image" content="./img/openGraph.jpg" />
      <meta name="twitter:description" content="프론트엔드 이주영의 포트폴리오 입니다." />
     
     <link rel="stylesheet" href="./css/index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script src="./js/index.js" defer></script>
     
@@ -65,6 +64,32 @@
         </div><!-- div.basic_intro -->
 
         <article class="keyword_intro">
+            <h3>대표 Keyword</h3>
+            <ul class="keyword_name">
+                <li>디테일</li>
+                <li><span>분석적</span><span>사고</span></li>
+                <li>책임감</li>
+            </ul>
+
+            <div class="keywordTxt">
+                <ul class="keywordComments">
+                    <li>
+                        픽셀 단위까지 꼼꼼하게 검토하여 시각적 일관성을 유지하고,<br class="pc_br"> 사용자 경험을 극대화하는 <b>디테일</b>
+                    </li>
+                    <li>
+                        복잡한 문제를 체계적으로 분해하고, 데이터 기반의 결정을 통해<br class="pc_br"> 최적화된 성능과 유지보수성을 확보하는 <b>분석적 사고</b>
+                    </li>
+                    <li>
+                        프로젝트 전 과정에서 품질을 보장하며,<br class="pc_br"> 기한 내 완성도를 높이는 데 항상 최선을 다하겠다는 <b>책임감</b>
+                    </li>
+                </ul>
+                <span>
+                    중시하는 <strong>프론트엔드 이주영</strong>입니다.
+                </span>
+            </div> 
+
+<!--            
+            //백업용)
             <div class="keywordName">
                 <h3>대표 Keyword</h3>
                 <ul>
@@ -89,7 +114,8 @@
                 <span>
                     중시하는 <strong>프론트엔드 이주영</strong>입니다.
                 </span>
-            </div><!-- div.keywordTxt -->
+            </div> 
+-->
 
         </article><!-- keyword_intro -->
 
@@ -333,28 +359,28 @@
             </h2>
             <div class="contentsWrapper">
                 <nav class="polderMenu">
-                    <a class="polder">
+                    <a class="polder" data-name="all">
                         <p class="polderImg">
                             <i class="polderIcon">
                             </i>
                         </p>
                         <span>All</span>
                     </a>
-                    <a class="polder">
+                    <a class="polder" data-name="app">
                         <p class="polderImg">
                             <i class="polderIcon">
                             </i>
                         </p>
                         <span>앱</span>
                     </a>
-                    <a class="polder">
+                    <a class="polder" data-name="site">
                         <p class="polderImg">
                             <i class="polderIcon">
                             </i>
                         </p>
                         <span>사이트</span>
                     </a>
-                    <a class="polder">
+                    <a class="polder" data-name="etc">
                         <p class="polderImg">
                             <i class="polderIcon">
                             </i>
@@ -407,6 +433,18 @@
                 <img src="./img/kakaoQrImg.jpg" alt="KakaoQR">
             </i>
         </div>
+
+        <div class="kakoIDCopy">
+            <div class="contentsWrapper">
+                <strong>
+                    <i></i>
+                    ID: kakajy123
+                </strong>
+                <button class="copyBtn" type="button">
+                    ID 복사 >
+                </button>
+            </div>
+        </div>
     </div>
 
     <button type="button" class="topUpBtn">
@@ -415,4 +453,5 @@
 </body>
 <script>
 </script>
+
 </html>

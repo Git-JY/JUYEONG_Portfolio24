@@ -101,7 +101,7 @@ section.sec_intro{
                     >dt{
                         // outline: 1px solid red;
                         width: 100%; height: 4.5vw;
-                        border-radius: 1vw;
+                        border-radius: 0.4vw;
                         margin-right: 0px;
                     }//>dt
     
@@ -115,45 +115,113 @@ section.sec_intro{
 
     }//>div.basic_intro
 
+    // 백업용)
+    // >article.keyword_intro{
+    //     // outline: 1px solid red;
+    //     margin-top: 9vw;
+
+    //     >div.keywordName{
+            
+    //         >h3{
+    //             font-size: 3.6vw;
+    //             padding: 0px 2vw;
+
+    //         }//>h3
+
+    //         >ul{
+    //             // outline: 1px solid blue;
+
+    //             margin: 5vw 0px;
+
+    //             >li{
+    //                 // outline: 1px solid red;
+    //                 width: 20vw; height: 20vw;
+    //                 font-size: 3.8vw;
+    //                 &:not(:last-child){
+    //                     margin-right: 7.5vw;
+    //                 }
+
+    //                 // 분석적 사고 나누기 위함
+    //                 >span{
+    //                 }//>span 
+
+    //                 // &:hover{
+    //                 //     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+    //                 // }
+    //             }//>li
+    //         }//>ul
+    //     }//>div.keywordName
+
+    //     >div.keywordTxt{
+    //         margin-top: 8vw;
+            
+    //         font-size: 3vw;
+
+    //         //공통
+    //         b, strong{
+    //         }//b, strong
+
+    //         >ul.keywordComments{
+
+    //             >li{
+    //                 &:not(:last-child){
+    //                     margin-bottom: 4.5vw;
+    //                 }
+
+    //                 >b{
+    //                 }
+    //             }//>li
+
+    //         }//>ul.keywordComments
+
+    //         >span{
+    //             margin-top: 8vw;
+    //             >strong{
+    //             }
+    //         }//>span
+
+    //     }//>div.keywordTxt
+
+    // }//>article.keyword_intro
+
     >article.keyword_intro{
         // outline: 1px solid red;
         margin-top: 9vw;
-
-        >div.keywordName{
+        padding: 7vw 0px 9vw;
             
-            >h3{
-                font-size: 3.6vw;
-                padding: 0px 2vw;
+        >h3{
+            font-size: 4vw;
+            padding: 0px 2vw;
 
-            }//>h3
+        }//>h3
 
-            >ul{
-                // outline: 1px solid blue;
+        >ul.keyword_name{
+            // outline: 1px solid blue;
 
-                margin: 5vw 0px;
+            margin-bottom: 10vw;
 
-                >li{
-                    // outline: 1px solid red;
-                    width: 20vw; height: 20vw;
-                    font-size: 3.8vw;
-                    &:not(:last-child){
-                        margin-right: 7.5vw;
-                    }
+            >li{
+                // outline: 1px solid red;
+                width: 20vw; height: 20vw;
+                font-size: 3.8vw;
+                &:not(:last-child){
+                    margin-right: 5vw;
+                }
 
-                    // 분석적 사고 나누기 위함
-                    >span{
-                    }//>span 
+                // 분석적 사고 나누기 위함
+                >span{
+                }//>span 
 
-                    // &:hover{
-                    //     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
-                    // }
-                }//>li
-            }//>ul
-        }//>div.keywordName
+                // &:hover{
+                //     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+                // }
+            }//>li
+        }//>ul
 
         >div.keywordTxt{
             margin-top: 8vw;
             
+            // font-size: 3vw;
             font-size: 3vw;
 
             //공통
@@ -571,6 +639,7 @@ section.sec_portfolio{
 
     >article.wrapper{
         // outline: 1px solid pink;
+        width: 100%;
         
         >h2{
             // outline: 1px solid red;
@@ -655,6 +724,18 @@ section.sec_portfolio{
                     width: 30vw; height: 30vw; ////////
                     // width: 20vw; height: 20vw;
                     border-radius: 1vw;
+
+                    >a.contentsWrapper{
+
+                        font-size: 3.2vw;
+                        >strong{
+                        }
+                    }//a.contentsWrapper
+
+                    >i.bg{
+                        >img{
+                        }
+                    }
                 }//>li
 
             }//>ul.portfolioContents
@@ -722,8 +803,8 @@ div.kakaoQR{
 
     >button.close{
         // outline: 1px solid red;
-        top: 1.8vw; right: 3vw;
-        width: 2.5vw; height: 2.5vw;
+        top: 3vw; right: 3vw;
+        width: 5vw; height: 5vw;
     }//>button.close
 
     >div.wrapper{
@@ -757,11 +838,11 @@ div.kakaoQR{
 
 //alert창 꾸미기
 div.swal2-container{
-    border-radius: 10px;
+    border-radius: 1vw;
 
     div.swal2-popup{
-        width: 38vw;
-        padding: 2.4vw 3vw;
+        width: 60vw;
+        padding: 6vw 3vw;
         // display: flex !important;
         // justify-content: flex-start;
         // align-items: center;
@@ -778,22 +859,27 @@ div.swal2-container{
         // }
 
         h2.swal2-title{
-            font-size: 2.4vw;
+            font-size: 3.5vw;
         }
         div.swal2-html-container{
             padding: 1.6vw 0px 1.6vw;
-            font-size: 1.8vw;
+            font-size: 2.8vw;
         }
         div.swal2-actions{
             button.swal2-confirm{
-                font-size: 2vw;
-                padding: 0.2vw 2.2vw;
+                font-size: 3vw;
+                padding: 1vw 3vw;
             }
         }
     }
 }//div.swal2-container
 
 }//@media (max-width: 1100px)
+
+
+
+
+
 
 @media (max-width: 950px) {
 
@@ -912,4 +998,38 @@ div.swal2-container{
         }
     
     }//>button.topUpBtn
+
+    div.kakaoQR{
+    
+        >button.close{
+
+        }//>button.close
+    
+        >div.wrapper{
+            display: none;
+            
+            >span{
+            }
+            >i{
+                
+                >img{
+                }
+            }
+        }//>div.wrapper
+    
+        >div.kakoIDCopy{
+            display: flex;
+    
+            >div.contentsWrapper{
+                >strong{
+                    >i{
+                    }
+                }
+                >button.copyBtn{
+                }//>div.contentsWrapper
+            }//>div.contentsWrapper
+        }//>div.kakoIDCopy
+    
+    }//div.kakaoQR
+
 }//@media (max-width: 950px)
