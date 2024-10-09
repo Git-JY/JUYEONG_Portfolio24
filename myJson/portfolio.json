@@ -5,21 +5,21 @@
             "use": "NEXT.JS",
             "date": "2023/10/5 ~ 10/28",
             "url": "https://next-project-amongst-flora.vercel.app/",
-            "img": "../img/af.jpg"
+            "img": "./img/af.jpg"
         },
         {
             "name": "책과 리뷰한잔",
             "use": "REACT.JS",
             "date": "2023/9/11 ~ 10/4",
             "url": "https://git-jy.github.io/reactProject_BR/",
-            "img": "../img/bookReview.jpg"
+            "img": "./img/bookReview.jpg"
         },
         {
             "name": "Yflix",
             "use": "REACT.JS",
             "date": "2023/8/29 ~ 9/8",
             "url": "https://git-jy.github.io/yflix/",
-            "img": "../img/yflix.jpg"
+            "img": "./img/yflix.jpg"
         }
     ],
     "site": [
@@ -28,14 +28,14 @@
             "use": "JAVASCRIPT",
             "date": "2023/6/27 ~ 7/21",
             "url": "https://git-jy.github.io/jy/cloneProject/PC/HomePage/",
-            "img": "../img/twosome.jpg"
+            "img": "./img/twosome.jpg"
         },
         {
             "name": "라이온 힐",
             "use": "JAVASCRIPT",
             "date": "2023/7/31 ~ 8/31",
             "url": "https://git-jy.github.io/LionHill/index.html",
-            "img": "../img/LionHill.jpg"
+            "img": "./img/LionHill.jpg"
         }
 
     ],
@@ -45,7 +45,7 @@
             "use": "REACT.JS",
             "date": "2023/10/30 ~ 11/10",
             "url": "https://git-jy.github.io/portfolio_react_ver/",
-            "img": "../img/portfolio.jpg"
+            "img": "./img/portfolio.jpg"
         }
 
     ]
