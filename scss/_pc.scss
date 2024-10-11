@@ -368,34 +368,34 @@ section.sec_intro{
                 }
             }//>ul.keyword_name
 
-            >div.keywordTxt{
-                >ul.keywordComments{
-                    >li{
-                        &:nth-child(1){
-                            >span{
-                                animation: underlineAni alternate backwards .4s 0s 2;
-                            }
-                        }
-                        &:nth-child(2){
-                            >span{
-                                animation: underlineAni alternate backwards .4s .5s 2;
-                            }
-                        }
-                        &:nth-child(3){
-                            >span{
-                                animation: underlineAni alternate backwards .4s 1s 2;
-                            }
-                        }
+            // >div.keywordTxt{
+            //     >ul.keywordComments{
+            //         >li{
+            //             &:nth-child(1){
+            //                 >span{
+            //                     animation: underlineAni alternate backwards .4s 0s 2;
+            //                 }
+            //             }
+            //             &:nth-child(2){
+            //                 >span{
+            //                     animation: underlineAni alternate backwards .4s .5s 2;
+            //                 }
+            //             }
+            //             &:nth-child(3){
+            //                 >span{
+            //                     animation: underlineAni alternate backwards .4s 1s 2;
+            //                 }
+            //             }
 
-                    }//>li
-                }//>ul.keywordComments
+            //         }//>li
+            //     }//>ul.keywordComments
 
-                >span{
-                    >strong{
-                        animation: underlineAni alternate backwards .4s 1.5s 2;
-                    }
-                }
-            }//>div.keywordTxt
+            //     >span{
+            //         >strong{
+            //             animation: underlineAni alternate backwards .4s 1.5s 2;
+            //         }
+            //     }
+            // }//>div.keywordTxt
         }//&.ani
 
     }//>article.keyword_intro
