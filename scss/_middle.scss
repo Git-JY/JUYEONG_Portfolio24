@@ -115,75 +115,6 @@ section.sec_intro{
 
     }//>div.basic_intro
 
-    // 백업용)
-    // >article.keyword_intro{
-    //     // outline: 1px solid red;
-    //     margin-top: 9vw;
-
-    //     >div.keywordName{
-            
-    //         >h3{
-    //             font-size: 3.6vw;
-    //             padding: 0px 2vw;
-
-    //         }//>h3
-
-    //         >ul{
-    //             // outline: 1px solid blue;
-
-    //             margin: 5vw 0px;
-
-    //             >li{
-    //                 // outline: 1px solid red;
-    //                 width: 20vw; height: 20vw;
-    //                 font-size: 3.8vw;
-    //                 &:not(:last-child){
-    //                     margin-right: 7.5vw;
-    //                 }
-
-    //                 // 분석적 사고 나누기 위함
-    //                 >span{
-    //                 }//>span 
-
-    //                 // &:hover{
-    //                 //     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
-    //                 // }
-    //             }//>li
-    //         }//>ul
-    //     }//>div.keywordName
-
-    //     >div.keywordTxt{
-    //         margin-top: 8vw;
-            
-    //         font-size: 3vw;
-
-    //         //공통
-    //         b, strong{
-    //         }//b, strong
-
-    //         >ul.keywordComments{
-
-    //             >li{
-    //                 &:not(:last-child){
-    //                     margin-bottom: 4.5vw;
-    //                 }
-
-    //                 >b{
-    //                 }
-    //             }//>li
-
-    //         }//>ul.keywordComments
-
-    //         >span{
-    //             margin-top: 8vw;
-    //             >strong{
-    //             }
-    //         }//>span
-
-    //     }//>div.keywordTxt
-
-    // }//>article.keyword_intro
-
     >article.keyword_intro{
         // outline: 1px solid red;
         margin-top: 9vw;
@@ -212,9 +143,6 @@ section.sec_intro{
                 >span{
                 }//>span 
 
-                // &:hover{
-                //     box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
-                // }
             }//>li
         }//>ul
 
@@ -380,7 +308,7 @@ section.sec_skill{
         }//>div.topWrapper
     
         >article.skill_skill{
-            padding: 4.6vw 9vw 4.8vw;
+            padding: 6vw 9vw 4.8vw;
             margin-top: 6.4vw;
     
             // >div.titleWrapper{
@@ -390,7 +318,7 @@ section.sec_skill{
                 }//>h3
 
                 >div.skillIcon_whiteBg{
-                    padding: 1vw 1vw 0px; 
+                    padding: 1vw 1.5vw 0px; 
                     border-radius: 1vw;
 
                     >div.skillIconWrappper{//체크박스 + 스킬아이콘 토글버튼
@@ -400,32 +328,29 @@ section.sec_skill{
                         }
 
                         >label{//스킬아이콘 토글버튼
-                            width: 6.9vw; height: 3.2vw;
-                            padding: 0.6vw 0.7vw;
+                            width: 10.2vw; height: 4.6vw;
                             border-radius: 5vw;
                             
                             >span{//동그라미
-                                //(전체너비69px - 몸통너비 20px - 패딩 7px)
-                                left: 4.2vw;
+                                //(전체너비10.2vw - 몸통너비 3vw - 패딩 1vw)
+                                left: 6.2vw;
                                 
-                                width: 2.0vw; height: 2.0vw;
-                                // box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.10);
+                                width: 3vw; height: 3vw;
                             }
 
                             &::before{//글귀
-                                left: 1.3vw;
-
-                                font-size: 0.96vw;
+                                left: 1.4vw;
+                                font-size: 1.6vw;
                             }
                         }//>label
                         input:checked + label{
 
                             >span{                           
-                                left: 0.7vw;
+                                left: 1vw;
                             }
 
                             &::before{
-                                right: 1.3vw;
+                                right: 1.4vw;
                             }
 
                         }//input:checked + label
@@ -477,7 +402,9 @@ section.sec_skill{
                                 }//>img
 
                                 >span.txtVer{
-                                    font-size: 1.2vw;
+                                    // outline: 1px solid red;
+                                    padding-right: 1.2vw;
+                                    font-size: 1.5vw;
                                     // letter-spacing: 0.24px;
 
                                     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
@@ -650,13 +577,13 @@ section.sec_portfolio{
             //     text-wrap: nowrap;
             // };
 
-            >button.gitBtn{
+            >a.gitBtn{
                 // outline: 1px solid red;
 
                 width: 3.8vw;  height: 3.8vw;
                 margin-left: 1.2vw;
 
-            }//>button.gitBtn
+            }//>a.gitBtn
 
         }//>h2
 
@@ -909,13 +836,13 @@ div.swal2-container{
     
                 font-size: 5vw;
     
-                >button.gitBtn{
+                >a.gitBtn{
                     // outline: 1px solid red;
     
                     width: 5vw;  height: 5vw;
                     margin-left: 1.2vw;
     
-                }//>button.gitBtn
+                }//>a.gitBtn
     
             }//>h2
     

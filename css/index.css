@@ -44,6 +44,13 @@
 }
 @font-face {
   font-family: "SUIT Variable";
+  src: url("../fonts/SUITVariableThin.woff2") format("woff2"), url("../fonts/SUITVariableThin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SUIT Variable";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
@@ -75,6 +82,17 @@ i {
 }
 
 /* 4. 컬러 */
+/* 5. 애니메이션 */
+@keyframes tantantanAni {
+  0% {
+    transform: scale(100%, 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    transform: scale(110%, 110%);
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+  }
+}
 body {
   background-color: white;
   text-size-adjust: none;
@@ -289,6 +307,15 @@ section.sec_intro > article.keyword_intro > ul.keyword_name > li:hover {
   transform: scale(110%, 110%);
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
 }
+section.sec_intro > article.keyword_intro > ul.keyword_name > li.ani:nth-child(1) {
+  animation: tantantanAni alternate backwards cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.4s;
+}
+section.sec_intro > article.keyword_intro > ul.keyword_name > li.ani:nth-child(2) {
+  animation: tantantanAni alternate backwards cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.4s 0.4s;
+}
+section.sec_intro > article.keyword_intro > ul.keyword_name > li.ani:nth-child(3) {
+  animation: tantantanAni alternate backwards cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.4s 0.8s;
+}
 section.sec_intro > article.keyword_intro > div.keywordTxt {
   display: flex;
   justify-content: center;
@@ -313,8 +340,17 @@ section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments 
   align-items: center;
   flex-direction: column;
 }
+section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments > li {
+  display: inline;
+  background: linear-gradient(to right, transparent 50%, #BBE8FF 50%);
+  background-size: 200%;
+  transition: 0.3s;
+}
 section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments > li:not(:last-child) {
   margin-bottom: 38px;
+}
+section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments > li:hover {
+  background-position-x: -100%;
 }
 section.sec_intro > article.keyword_intro > div.keywordTxt > span {
   margin-top: 62px;
@@ -527,6 +563,7 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_w
   left: 13px;
   z-index: 0;
   transform: translateY(-50%);
+  font-family: "SUIT Variable";
   font-size: 0.6rem;
   font-weight: 900;
   color: black;
@@ -596,8 +633,9 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWra
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: "SUIT Variable";
   font-size: 0.75rem;
-  font-weight: 900;
+  font-weight: 600;
   letter-spacing: 0.24px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   display: none;
@@ -646,7 +684,7 @@ section.sec_portfolio > article.wrapper > h2 {
   letter-spacing: 0.84px;
   text-wrap: nowrap;
 }
-section.sec_portfolio > article.wrapper > h2 > button.gitBtn {
+section.sec_portfolio > article.wrapper > h2 > a.gitBtn {
   flex-shrink: 0;
   width: 38px;
   height: 38px;
@@ -1108,36 +1146,35 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     font-size: 2.4vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill {
-    padding: 4.6vw 9vw 4.8vw;
+    padding: 6vw 9vw 4.8vw;
     margin-top: 6.4vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > h3 {
     font-size: 3.6vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg {
-    padding: 1vw 1vw 0px;
+    padding: 1vw 1.5vw 0px;
     border-radius: 1vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label {
-    width: 6.9vw;
-    height: 3.2vw;
-    padding: 0.6vw 0.7vw;
+    width: 10.2vw;
+    height: 4.6vw;
     border-radius: 5vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label > span {
-    left: 4.2vw;
-    width: 2vw;
-    height: 2vw;
+    left: 6.2vw;
+    width: 3vw;
+    height: 3vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label::before {
-    left: 1.3vw;
-    font-size: 0.96vw;
+    left: 1.4vw;
+    font-size: 1.6vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label > span {
-    left: 0.7vw;
+    left: 1vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label::before {
-    right: 1.3vw;
+    right: 1.4vw;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > h4 {
     border-radius: 3vw;
@@ -1161,7 +1198,8 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > span.txtVer {
-    font-size: 1.2vw;
+    padding-right: 1.2vw;
+    font-size: 1.5vw;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     display: none;
   }
@@ -1186,7 +1224,7 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   section.sec_portfolio > article.wrapper > h2 {
     font-size: 4.2vw;
   }
-  section.sec_portfolio > article.wrapper > h2 > button.gitBtn {
+  section.sec_portfolio > article.wrapper > h2 > a.gitBtn {
     width: 3.8vw;
     height: 3.8vw;
     margin-left: 1.2vw;
@@ -1281,7 +1319,7 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   section.sec_portfolio > article.wrapper > h2 {
     font-size: 5vw;
   }
-  section.sec_portfolio > article.wrapper > h2 > button.gitBtn {
+  section.sec_portfolio > article.wrapper > h2 > a.gitBtn {
     width: 5vw;
     height: 5vw;
     margin-left: 1.2vw;

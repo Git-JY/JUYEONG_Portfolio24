@@ -2,7 +2,8 @@ elbody = document.querySelector('body'), // 바디
 elHeader = elbody.querySelector('header'), // 헤더 전체
 elHeaderA = elHeader.querySelectorAll('a'), // 소개 보유능력 포트폴리오
 el_secAll = elbody.querySelectorAll('section'), //sec 전부
-// elKeywordLiAll = el_secAll[0].querySelectorAll('div.keywordName>ul>li'),
+elKeywordLiAll = el_secAll[0].querySelectorAll('ul.keyword_name>li'), //키워드 네임
+elKeyCommentsLiAll = el_secAll[0].querySelectorAll('div.keywordTxt>ul.keywordComments>li'), //키워드 글귀
 el_artic_skill = el_secAll[1].querySelector('article.skill_skill'), //스킬 sec의 skill 박스
 elUl_skillAll = el_artic_skill.querySelectorAll('ul.skillGroup'), // 스킬박스의 각 그룹
 elCheck_SkillIcon = el_artic_skill.querySelector('input#skillIcon'), // 스킬 체크박스
@@ -87,21 +88,24 @@ fetch("./myJson/mySkill.json", {
 })//.then((skillObj)=>{
 
 const options2 = {
-    threshold: 0.2 // 요소가 20%정도 보였을 때, 감지
+    threshold: 0.4 // 요소가 20%정도 보였을 때, 감지
 }
-// const io2 = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry =>{
+const io2 = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry =>{
 
-//         if(entry.isIntersecting){
-//             entry.target.classList.add('active');
-//             observer.unobserve(entry.target);
-//         }//if(entry.isIntersecting)
+        if(entry.isIntersecting){
+            entry.target.classList.add('ani');
+            observer.unobserve(entry.target);
+        }//if(entry.isIntersecting)
 
-//     })
-// }, options2)//const io = new IntersectionObserver
-// elKeywordLiAll.forEach((ele)=>{
-//     io2.observe(ele);
-// })
+    })
+}, options2)//const io = new IntersectionObserver
+elKeywordLiAll.forEach((ele)=>{
+    io2.observe(ele);
+})
+elKeyCommentsLiAll.forEach((ele)=>{
+    io2.observe(ele);
+})
 
 // 헤드 a버튼 클릭시 이동 이벤트
 elHeaderA.forEach((elA, k) => {

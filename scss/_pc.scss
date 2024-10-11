@@ -189,120 +189,6 @@ section.sec_intro{
 
     }//>div.basic_intro
 
-    // 백업용)
-    // >article.keyword_intro{
-    //     // outline: 1px solid red;
-    //     width: 100%; max-width: 900px; 
-    //     margin-top: 90px;
-
-    //     >div.keywordName{
-    //         position: relative; top: 0px; left: 0px;
-    //         border: 1px solid $grayColor3;
-            
-    //         >h3{
-    //             position: absolute; top: 0%; left: 50%;
-    //             transform: translate(-50%, -50%);
-
-    //             @include font(2.25rem, $fw3, black);
-    //             text-wrap: nowrap;
-    //             padding: 0px 20px;
-
-    //             background-color: white;
-
-    //         }//>h3
-
-    //         >ul{
-    //             // outline: 1px solid blue;
-
-    //             margin: 50px 0px;
-    //             @include flex();
-
-    //             >li{
-    //                 // outline: 1px solid red;
-    //                 width: 180px; height: 180px;
-    //                 border-radius: 50%;
-    //                 background-color: $subColor3; 
-                    
-    //                 flex-shrink: 0;
-    //                 @include flex(){
-    //                     // 분석적 사고를 두 줄로 하기 위함
-    //                     flex-direction: column;
-    //                 };
-    //                 @include font(2.25rem, $fw3, white){
-    //                     text-wrap: nowrap;
-    //                 };
-                    
-    //                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    //                 &:not(:last-child){
-    //                     margin-right: 75px;
-    //                 }
-
-    //                 transition: transform cubic-bezier(.61,-0.05,.17,2.39) 0.1s, box-shadow cubic-bezier(.61,-0.05,.17,2.39) 0.1s;
-    //                 cursor: default;
-
-    //                 // 분석적 사고 나누기 위함
-    //                 >span{
-    //                     font-family: $fw3;
-    //                     // text-wrap: nowrap;
-    //                 }//>span 
-
-    //                 &:hover{
-    //                     transform: scale(110%, 110%);
-    //                     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
-    //                 }
-    //                 // &.active{
-    //                 //     animation: keywordAni alternate backwards 0.5s;
-    //                 // }
-    //             }//>li
-    //         }//>ul
-    //     }//>div.keywordName
-
-    //     >div.keywordTxt{
-    //         @include flex(){
-    //             flex-direction: column;
-    //         }
-    //         margin-top: 60px;
-            
-    //         @include font(1.5rem, $fw2, $grayColor4){
-    //             text-align: center;
-    //             line-height: 145.5%; 
-    //             // @include text();
-    //             text-wrap: nowrap;
-    //         };
-
-    //         //공통
-    //         b, strong{
-    //             font-family: $fw3;
-    //             color: black;
-    //             text-wrap: nowrap;
-    //         }//b, strong
-
-    //         >ul.keywordComments{
-    //             @include flex(){
-    //                 flex-direction: column;
-    //             }
-
-    //             >li{
-    //                 &:not(:last-child){
-    //                     margin-bottom: 38px;
-    //                 }
-
-    //                 >b{
-    //                 }
-    //             }//>li
-
-    //         }//>ul.keywordComments
-
-    //         >span{
-    //             margin-top: 62px;
-    //             >strong{
-    //             }
-    //         }//>span
-
-    //     }//>div.keywordTxt
-
-    // }//>article.keyword_intro
-
     >article.keyword_intro{
         position: relative; top: 0px; left: 0px;
         border: 2px solid $grayColor2;
@@ -362,9 +248,17 @@ section.sec_intro{
                     transform: scale(110%, 110%);
                     box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
                 }
-                // &.active{
-                //     animation: keywordAni alternate backwards 0.5s;
-                // }
+                &.ani{
+                    &:nth-child(1){
+                        animation: tantantanAni alternate backwards cubic-bezier(.61,-0.05,.17,2.39) 0.4s;
+                    }
+                    &:nth-child(2){
+                        animation: tantantanAni alternate backwards cubic-bezier(.61,-0.05,.17,2.39) 0.4s 0.4s;
+                    }
+                    &:nth-child(3){
+                        animation: tantantanAni alternate backwards cubic-bezier(.61,-0.05,.17,2.39) 0.4s 0.8s;
+                    }
+                }//&.ani
             }//>li
         }//>ul
 
@@ -400,6 +294,16 @@ section.sec_intro{
 
                     >b{
                     }
+
+                    display: inline;
+                    background: linear-gradient(to right, transparent 50%, $subColor1 50%);
+                    background-size: 200%;
+                    transition: .3s;
+
+                    &:hover{
+                        background-position-x: -100%;
+                    }
+
                 }//>li
 
             }//>ul.keywordComments
@@ -651,7 +555,7 @@ section.sec_skill{
                             position: absolute; top: 50%; left: 13px; z-index: 0;
                             transform: translateY(-50%);
                             
-                            // font-family: 'SUIT Variable';
+                            font-family: 'SUIT Variable';
                             font-size: 0.6rem;
                             font-weight: 900;
                             color: black;
@@ -661,6 +565,7 @@ section.sec_skill{
                             transition: 0.2s;
                         }
                     }//>label
+                    
                     input:checked + label{
                         background-color: $mainColor;
     
@@ -735,9 +640,9 @@ section.sec_skill{
                                     position: absolute; top: 50%; left: 50%;
                                     transform: translate(-50%, -50%);
 
-                                    // font-family: 'SUIT Variable';
+                                    font-family: 'SUIT Variable';
                                     font-size: 0.75rem;
-                                    font-weight: 900;
+                                    font-weight: 600;
                                     letter-spacing: 0.24px;
 
                                     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -921,7 +826,7 @@ section.sec_portfolio{
                 text-wrap: nowrap;
             };
 
-            >button.gitBtn{
+            >a.gitBtn{
                 // outline: 1px solid red;
                 
                 flex-shrink: 0;
@@ -930,7 +835,7 @@ section.sec_portfolio{
                 margin-left: 12px;
                 background: url(../img/icon_github.svg) center / 100% 100% no-repeat scroll;
 
-            }//>button.gitBtn
+            }//>a.gitBtn
 
         }//>h2
 
