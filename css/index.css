@@ -1198,8 +1198,8 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > span.txtVer {
-    padding-right: 1.2vw;
-    font-size: 1.5vw;
+    padding-right: 2.4vw;
+    font-size: 2vw;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     display: none;
   }
