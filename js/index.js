@@ -2,8 +2,9 @@ elbody = document.querySelector('body'), // 바디
 elHeader = elbody.querySelector('header'), // 헤더 전체
 elHeaderA = elHeader.querySelectorAll('a'), // 소개 보유능력 포트폴리오
 el_secAll = elbody.querySelectorAll('section'), //sec 전부
-elKeywordLiAll = el_secAll[0].querySelectorAll('ul.keyword_name>li'), //키워드 네임
-elKeyCommentsLiAll = el_secAll[0].querySelectorAll('div.keywordTxt>ul.keywordComments>li'), //키워드 글귀
+elKeywordArticle = el_secAll[0].querySelector('article.keyword_intro'), //키워드 article
+elKeywordLiAll = elKeywordArticle.querySelectorAll('ul.keyword_name>li'), //키워드 네임
+elKeyCommentsLiAll = elKeywordArticle.querySelectorAll('div.keywordTxt>ul.keywordComments>li'), //키워드 글귀
 el_artic_skill = el_secAll[1].querySelector('article.skill_skill'), //스킬 sec의 skill 박스
 elUl_skillAll = el_artic_skill.querySelectorAll('ul.skillGroup'), // 스킬박스의 각 그룹
 elCheck_SkillIcon = el_artic_skill.querySelector('input#skillIcon'), // 스킬 체크박스
@@ -16,7 +17,7 @@ elkakaoA = elFooter.querySelector('a.kakaoBtn'), // 카카오버튼
 elKakaoQR = elbody.querySelector('div.kakaoQR'), // 내려오는 카카오 QR전체
 elKakaoCopyBtn = elKakaoQR.querySelector('div.kakoIDCopy button.copyBtn'), // 카카오 카피버튼
 elcloseBtn = elKakaoQR.querySelector('button.close'); // 카카오 QR X버튼
-//경우 2 fetch)
+
 // fetch("../myJson/mySkill.json", {
 fetch("./myJson/mySkill.json", {
     headers: {
@@ -88,7 +89,7 @@ fetch("./myJson/mySkill.json", {
 })//.then((skillObj)=>{
 
 const options2 = {
-    threshold: 0.4 // 요소가 20%정도 보였을 때, 감지
+    threshold: 0.6 // 요소가 60%정도 보였을 때, 감지
 }
 const io2 = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry =>{
@@ -100,11 +101,15 @@ const io2 = new IntersectionObserver((entries, observer) => {
 
     })
 }, options2)//const io = new IntersectionObserver
-elKeywordLiAll.forEach((ele)=>{
-    io2.observe(ele);
-})
-elKeyCommentsLiAll.forEach((ele)=>{
-    io2.observe(ele);
+io2.observe(elKeywordArticle);
+
+let preKeywordKey = 0;
+elKeywordLiAll.forEach((ele, k)=>{
+    ele.onclick = () => {
+        elKeyCommentsLiAll[preKeywordKey].classList.remove('active');
+        if(k != preKeywordKey) elKeyCommentsLiAll[k].classList.add('active');
+        preKeywordKey = k;
+    }
 })
 
 // 헤드 a버튼 클릭시 이동 이벤트
