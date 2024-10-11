@@ -89,7 +89,7 @@ fetch("./myJson/mySkill.json", {
 })//.then((skillObj)=>{
 
 const options2 = {
-    threshold: 0.6 // 요소가 60%정도 보였을 때, 감지
+    threshold: 0.4 // 요소가 40%정도 보였을 때, 감지
 }
 const io2 = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry =>{
