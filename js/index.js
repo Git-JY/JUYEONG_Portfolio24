@@ -107,7 +107,7 @@ let preKeywordKey = 0;
 elKeywordLiAll.forEach((ele, k)=>{
     ele.onclick = () => {
         elKeyCommentsLiAll[k].classList.toggle('active');
-        elKeyCommentsLiAll[preKeywordKey].classList.remove('active');
+        if(k != preKeywordKey) elKeyCommentsLiAll[preKeywordKey].classList.remove('active');
         preKeywordKey = k;
     }
 })
