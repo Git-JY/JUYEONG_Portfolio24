@@ -214,7 +214,7 @@ section.sec_intro {
   flex-direction: column;
 }
 section.sec_intro > div.basic_intro {
-  height: 314px;
+  height: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +223,7 @@ section.sec_intro > div.basic_intro > div {
   flex-shrink: 0;
 }
 section.sec_intro > div.basic_intro > div.leftSide {
-  width: 270px;
+  width: 260px;
   height: 100%;
   margin-right: 60px;
 }
