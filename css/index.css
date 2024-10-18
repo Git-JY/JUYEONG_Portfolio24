@@ -1193,7 +1193,6 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label::before {
     right: 1.4vw;
-    color: red;
   }
   section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > h4 {
     border-radius: 3vw;
