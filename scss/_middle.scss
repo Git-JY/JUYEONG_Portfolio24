@@ -339,8 +339,14 @@ section.sec_skill{
                             }
 
                             &::before{//글귀
-                                left: 1.4vw;
-                                font-size: 1.6vw;
+                                // left: 1.4vw;
+                                // font-size: 1.6vw;
+
+                                //test
+                                left: 1vw;
+                                font-size: 2vw;
+
+
                             }
                         }//>label
                         input:checked + label{
