@@ -634,7 +634,9 @@ section.sec_skill{
     
                         &::before{//글귀
                             content: 'TEXT';
-                            position: absolute; top: 50%; left: 13px; z-index: 0;
+                            position: absolute; top: 50%; 
+                            // left: 13px; 
+                            z-index: 0;
                             transform: translateY(-50%);
                             
                             font-family: 'SUIT Variable';
@@ -645,6 +647,12 @@ section.sec_skill{
                             text-wrap: nowrap;
     
                             transition: 0.2s;
+
+
+
+                            //test
+                            // left: 1vw;
+                            // font-size: 2vw;
                         }
                     }//>label
                     

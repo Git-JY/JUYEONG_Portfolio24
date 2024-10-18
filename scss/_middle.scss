@@ -339,12 +339,13 @@ section.sec_skill{
                             }
 
                             &::before{//글귀
-                                // left: 1.4vw;
-                                // font-size: 1.6vw;
+                                left: 1.4vw;
+                                font-size: 1.6vw;
 
                                 //test
-                                left: 1vw;
-                                font-size: 2vw;
+                                // left: 1vw;
+                                // font-size: 2vw;
+                                // color: blue;
 
 
                             }
@@ -357,6 +358,7 @@ section.sec_skill{
 
                             &::before{
                                 right: 1.4vw;
+                                color: red;
                             }
 
                         }//input:checked + label
@@ -807,7 +809,7 @@ div.swal2-container{
     }
 }//div.swal2-container
 
-}//@media (max-width: 1100px)
+}//@media (max-width: 1070px)
 
 
 
