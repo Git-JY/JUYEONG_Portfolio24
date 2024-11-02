@@ -139,7 +139,7 @@ window.addEventListener('resize', () => {
     // 컴퓨터 부담감을 줄이기 위한 디바운싱
     clearTimeout(resizeTimer);
 	resizeTimer = setTimeout(() => {
-        let el_secAll_y = [];
+        el_secAll_y = [];
         el_secAll.forEach((ele)=>{
             el_secAll_y.push(Math.floor(ele.getBoundingClientRect().y + window.scrollY));
         })//el_secAll.forEach((ele, k)=>{
@@ -245,7 +245,6 @@ fetch("./myJson/portfolio.json", {
                 </li>`;
             })//pofolObj[menuName].forEach((obj)=>{
 
-            console.log(pofolObj[menuName].length);
             if(pofolObj[menuName].length < 6){
                 let rest = 6 - pofolObj[menuName].length;
 
@@ -266,9 +265,6 @@ fetch("./myJson/portfolio.json", {
             pofolMenuFun(elA.dataset['name']);
         }
     })//elA_pofolAll.forEach((elA, k)
-
-    console.log('pofolObj');
-    console.log(pofolObj);
 })//.then((skillObj)=>{
 
 // 카카오 열기 버튼
@@ -314,7 +310,6 @@ elTopBtn.onclick = () => {
         behavior: 'smooth'
     })
 }//elTopBtn.click
-
 
 elCallA.onclick = (e) => {
     
