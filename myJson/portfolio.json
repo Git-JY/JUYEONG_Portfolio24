@@ -1,4 +1,21 @@
 {
+    "site": [
+        {
+            "name": "투썸 플레이스",
+            "use": "JAVASCRIPT",
+            "date": "2023/6/27 ~ 7/21",
+            "url": "https://git-jy.github.io/cloneProject_twosome/HomePage/index.html",
+            "img": "./img/twosome.jpg"
+        },
+        {
+            "name": "라이온 힐",
+            "use": "JAVASCRIPT",
+            "date": "2023/7/31 ~ 8/31",
+            "url": "https://git-jy.github.io/LionHill/index.html",
+            "img": "./img/LionHill.jpg"
+        }
+
+    ],
     "app": [
         {
             "name": "식물과 함께",
@@ -21,23 +38,6 @@
             "url": "https://git-jy.github.io/yflix/",
             "img": "./img/yflix.jpg"
         }
-    ],
-    "site": [
-        {
-            "name": "투썸 플레이스",
-            "use": "JAVASCRIPT",
-            "date": "2023/6/27 ~ 7/21",
-            "url": "https://git-jy.github.io/cloneProject_twosome/HomePage/index.html",
-            "img": "./img/twosome.jpg"
-        },
-        {
-            "name": "라이온 힐",
-            "use": "JAVASCRIPT",
-            "date": "2023/7/31 ~ 8/31",
-            "url": "https://git-jy.github.io/LionHill/index.html",
-            "img": "./img/LionHill.jpg"
-        }
-
     ],
     "etc": [
         {
