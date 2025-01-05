@@ -217,6 +217,7 @@ fetch("./myJson/portfolio.json", {
     const pofolMenuFun = (menuName) => { 
         elUl_pofol.innerHTML = '';
 
+        /*
         if(menuName == "all"){
             for(let keyName in pofolObj){
                 pofolObj[keyName].forEach((obj)=>{
@@ -253,6 +254,26 @@ fetch("./myJson/portfolio.json", {
                 }
             }//if(pofolObj[menuName].length < 6)
         }
+        */
+        pofolObj[menuName].forEach((obj)=>{
+            elUl_pofol.innerHTML += 
+            `<li>
+                <a class="contentsWrapper" href="${obj.url}" target="_blank">
+                    <strong>${obj.name}</strong>
+                </a>
+                <i class="bg">
+                    <img src="${obj.img}" alt="${obj.name}">
+                </i>
+            </li>`;
+        })//pofolObj[menuName].forEach((obj)=>{
+
+        if(pofolObj[menuName].length < 6){
+            let rest = 6 - pofolObj[menuName].length;
+
+            for(let i = 1; i <= rest; i++){
+                elUl_pofol.innerHTML += "<li class='empty'></li>";
+            }
+        }//if(pofolObj[menuName].length < 6)
     }//pofolMenuFun() 함수정의
 
     pofolMenuFun('all');

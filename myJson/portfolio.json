@@ -35,7 +35,7 @@
             "name": "Yflix",
             "use": "REACT.JS",
             "date": "2023/8/29 ~ 9/8",
-            "url": "https://git-jy.github.io/yflix/",
+            "url": "https://git-jy.github.io/YFlixNew/",
             "img": "./img/yflix.jpg"
         }
     ],
@@ -48,5 +48,49 @@
             "img": "./img/portfolio.jpg"
         }
 
+    ],
+    "all": [
+        {
+            "name": "투썸 플레이스",
+            "use": "JAVASCRIPT",
+            "date": "2023/6/27 ~ 7/21",
+            "url": "https://git-jy.github.io/cloneProject_twosome/HomePage/index.html",
+            "img": "./img/twosome.jpg"
+        },
+        {
+            "name": "Yflix",
+            "use": "REACT.JS",
+            "date": "2023/8/29 ~ 9/8",
+            "url": "https://git-jy.github.io/YFlixNew/",
+            "img": "./img/yflix.jpg"
+        },
+        {
+            "name": "식물과 함께",
+            "use": "NEXT.JS",
+            "date": "2023/10/5 ~ 10/28",
+            "url": "https://next-project-amongst-flora.vercel.app/",
+            "img": "./img/af.jpg"
+        },
+        {
+            "name": "책과 리뷰한잔",
+            "use": "REACT.JS",
+            "date": "2023/9/11 ~ 10/4",
+            "url": "https://git-jy.github.io/reactProject_BR/",
+            "img": "./img/bookReview.jpg"
+        },
+        {
+            "name": "포트폴리오1",
+            "use": "REACT.JS",
+            "date": "2023/10/30 ~ 11/10",
+            "url": "https://git-jy.github.io/portfolio_react_ver/",
+            "img": "./img/portfolio.jpg"
+        },
+        {
+            "name": "라이온 힐",
+            "use": "JAVASCRIPT",
+            "date": "2023/7/31 ~ 8/31",
+            "url": "https://git-jy.github.io/LionHill/index.html",
+            "img": "./img/LionHill.jpg"
+        }
     ]
 }
