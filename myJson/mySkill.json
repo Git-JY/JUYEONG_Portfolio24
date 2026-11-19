@@ -16,13 +16,18 @@
             "img": "./img/icon_js.svg"
         },
         {
+            "name": "Typescript",
+            "proficiency": 65,
+            "img": "./img/icon_typescript.svg"
+        },
+        {
             "name": "SASS",
-            "proficiency": 80,
+            "proficiency": 85,
             "img": "./img/icon_sass.svg"
         },
         {
             "name": "REACT.js",
-            "proficiency": 65,
+            "proficiency": 75,
             "img": "./img/icon_react.svg"
         },
         {
@@ -67,7 +72,7 @@
     "etc":[
         {
             "name": "FIGMA",
-            "proficiency": 85,
+            "proficiency": 90,
             "img": "./img/icon_figma.svg"
         },
         {
@@ -82,7 +87,7 @@
         },
         {
             "name": "GIT",
-            "proficiency": 20,
+            "proficiency": 40,
             "img": "./img/icon_git.svg"
         }
         

@@ -65,7 +65,7 @@ header{
 }//header
 
 section.sec_intro{ 
-    padding: (17.9vw + 6vw) $pd_middle 10vw;
+    padding: calc(17.9vw + 6vw) $pd_middle 10vw;
 
     // 사진 + (이름~이메일)
     >div.basic_intro{
@@ -264,8 +264,8 @@ section.sec_skill{
             >article.certificate_skill{
                 // outline: 1px solid red;
 
-                padding: 6.0vw 4.0vw 0px 3.4vw;
-    
+                padding: 4.7vw 3.2vw 0px;
+                 
                 >h3{}
 
                 >ul.contentsWrapper{
@@ -273,14 +273,14 @@ section.sec_skill{
                     >li{
                         // outline: 1px solid red;
                         &:not(:last-child){
-                            margin-bottom: 3.0vw;
+                            margin-bottom: 2.5vw;
                         }
 
                         >i{
                             // outline: 1px solid red;
 
-                            width: 9vw; height: 9vw;
-                            margin-right: 3vw;
+                            width: 6.5vw; height: 6.5vw;
+                            margin-right: 2.3vw;
                             >img{
                                 width: 100%; height: 100%;
                             }//>img
@@ -619,7 +619,7 @@ section.sec_portfolio{
                     >p.polderImg{//흰 배경
                         // outline: 1px solid red;
 
-                        width: 6vw; height: 6vw;
+                        width: 7vw; height: 7vw;
                         border-radius: 1vw; 
 
                         // padding: 7px;
@@ -631,7 +631,7 @@ section.sec_portfolio{
                     }//>p.polderImg
 
                     >span{
-                        font-size: 2vw;
+                        font-size: 2.3vw;
                         // @include font(20px, $fw3, black){
                         //     letter-spacing: 0.4px;
                         //     text-wrap: nowrap;
@@ -647,23 +647,17 @@ section.sec_portfolio{
                 // outline: 1px solid red;
 
                 margin-top: 4vw;
-                // margin-top: 2.5vw;//////////////
 
-                @include flex(){
-                    // column-gap: 78px; row-gap: 26px;
-                    column-gap: 7.8%; row-gap: 2.6vw;
-                }
+                column-gap: 2.6vw; row-gap: 2.6vw;
 
                 >li{//포트폴리오 하나 네모박스
                     // outline: 1px solid red;
 
-                    width: 30vw; height: 30vw; ////////
-                    // width: 20vw; height: 20vw;
                     border-radius: 1vw;
 
                     >a.contentsWrapper{
 
-                        font-size: 3.2vw;
+                        font-size: 2.2vw;
                         >strong{
                         }
                     }//a.contentsWrapper
@@ -717,60 +711,19 @@ footer{
 
 //button.topUpBtn은 아직 수정x
 button.topUpBtn{
-    // position: fixed; right: 30px; bottom: 85px;
-
-    // width: 70px; height: 70px;
-    // border-radius: 50%;
-    // background-color: white;
-
-    // @include flex();
-
-    // opacity: 0.8;
+    bottom: 20px;
+    width: 50px; height: 50px;
     // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 
-    // >i.icon{
-    //     width: 28px; height: 27px;
-    //     background: url(../img/icon_topUp.svg) center / 100% 100% no-repeat scroll;
+    >i.icon{
+        width: 21px; height: 20.25px;
+        background: url(../img/icon_topUp.svg) center / 100% 100% no-repeat scroll;
+    }
+    
+    // &.up{
     // }
+  }//>button.topUpBtn
 
-}//>button.topUpBtn
-
-div.kakaoQR{
-
-    >button.close{
-        // outline: 1px solid red;
-        top: 3vw; right: 3vw;
-        width: 5vw; height: 5vw;
-    }//>button.close
-
-    >div.wrapper{
-        // outline: 1px solid red;
-
-        border-radius: 5vw;
-        
-        >span{
-            // outline: 1px solid red;
-            padding: 2vw 0.7vw 0.7vw;
-
-            font-size: 2.8vw;
-            // @include font(28.8px, $fw2, rgba(249, 224, 0, 0.9)){
-            //     letter-spacing: 3.2px;
-            //     text-wrap: nowrap;
-            // };
-
-        }
-        >i{
-            
-            >img{
-            }
-        }
-    }//>div.wrapper
-
-    &.on{
-        box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.7);
-    }//&.on
-
-}//div.kakaoQR
 
 //alert창 꾸미기
 div.swal2-container{
@@ -814,158 +767,3 @@ div.swal2-container{
 
 
 
-
-
-
-@media (max-width: 950px) {
-
-    header.removeH1{
-
-        >div.contentsWrapper{
-            h1{
-
-            }
-
-            nav{
-                // justify-content: end;
-            }
-        }
-    };
-
-
-
-    section.sec_portfolio{
-        // outline: 1px solid blueviolet;
-    
-        >article.wrapper{
-            // outline: 1px solid pink;
-            
-            >h2{
-                // outline: 1px solid red;
-    
-                font-size: 5vw;
-    
-                >a.gitBtn{
-                    // outline: 1px solid red;
-    
-                    width: 5vw;  height: 5vw;
-                    margin-left: 1.2vw;
-    
-                }//>a.gitBtn
-    
-            }//>h2
-    
-            //하늘색 포트폴리오 묶음
-            >div.contentsWrapper{
-                // outline: 1px solid red;
-    
-                margin-top: 3vw;
-                
-                width: 100%;
-                padding: 5vw 0px 8.5vw;
-    
-                >nav.polderMenu{
-    
-                    >a.polder{
-                        // outline: 1px solid red;
-                        &:not(:last-child){
-                            margin-right: 4vw;
-                        }
-    
-                        cursor: pointer;
-    
-                        >p.polderImg{//흰 배경
-                            // outline: 1px solid red;
-    
-                            width: 9vw; height: 9vw;
-                            border-radius: 1.5vw; 
-    
-                            >i.polderIcon{//폴더 아이콘
-                            }//>i.polderIcon
-    
-                        }//>p.polderImg
-    
-                        >span{
-                            font-size: 2.5vw;
-                            // @include font(20px, $fw3, black){
-                            //     letter-spacing: 0.4px;
-                            //     text-wrap: nowrap;
-                            // }
-                            // margin-top: 1vw;
-                        }//>span
-    
-                    }//>a.polder
-    
-                }//>nav.polderMenu
-    
-                >ul.portfolioContents{//포트폴리오 네모박스 모음
-                    // outline: 1px solid red;
-    
-                    margin-top: 6vw;
-                    // margin-top: 2.5vw;//////////////
-    
-                    column-gap: 7%; row-gap: 4vw;
-    
-                    >li{//포트폴리오 하나 네모박스
-                        // outline: 1px solid red;
-    
-                        width: 35vw; height: 35vw; ////////
-                        // width: 20vw; height: 20vw;
-                        border-radius: 1vw;
-                    }//>li
-    
-                }//>ul.portfolioContents
-    
-            }//>div.contentsWrapper
-    
-        }//>article.wrapper
-    
-    }//section.sec_portfolio
-
-    button.topUpBtn{
-        right: 20px; bottom: 50px;
-    
-        width: 50px; height: 50px;
-        // box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-    
-        >i.icon{
-            width: 21px; height: 20.25px;
-            background: url(../img/icon_topUp.svg) center / 100% 100% no-repeat scroll;
-        }
-    
-    }//>button.topUpBtn
-
-    div.kakaoQR{
-    
-        >button.close{
-
-        }//>button.close
-    
-        >div.wrapper{
-            display: none;
-            
-            >span{
-            }
-            >i{
-                
-                >img{
-                }
-            }
-        }//>div.wrapper
-    
-        >div.kakoIDCopy{
-            display: flex;
-    
-            >div.contentsWrapper{
-                >strong{
-                    >i{
-                    }
-                }
-                >button.copyBtn{
-                }//>div.contentsWrapper
-            }//>div.contentsWrapper
-        }//>div.kakoIDCopy
-    
-    }//div.kakaoQR
-
-}//@media (max-width: 950px)

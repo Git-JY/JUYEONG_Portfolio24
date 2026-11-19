@@ -267,8 +267,13 @@ fetch("./myJson/portfolio.json", {
             </li>`;
         })//pofolObj[menuName].forEach((obj)=>{
 
-        if(pofolObj[menuName].length < 6){
-            let rest = 6 - pofolObj[menuName].length;
+        let maxRowsN = pofolObj[menuName].length % 3 == 0 ? Math.trunc(pofolObj[menuName].length / 3) : Math.trunc(pofolObj[menuName].length / 3) + 1; //최대 높이 수 구하기
+        
+        let maxN = maxRowsN*3 < 6 ? 6 : maxRowsN * 3; // 최대 개수를 구함, 그러나 최대개수가 6개보다 적으면 6개로 하기
+
+
+        if(pofolObj[menuName].length < maxN){
+            let rest = maxN - pofolObj[menuName].length;
 
             for(let i = 1; i <= rest; i++){
                 elUl_pofol.innerHTML += "<li class='empty'></li>";
@@ -331,6 +336,82 @@ elTopBtn.onclick = () => {
         behavior: 'smooth'
     })
 }//elTopBtn.click
+
+// 탑업 버튼 footer에 닿으면 위로 올리는 함수
+const topBtn_upFun = () => {
+  if (!elTopBtn || !elFooter) return;
+
+  const footerRect = elFooter.getBoundingClientRect(); // footerRect.top: 뷰포트로부터의 요소 수직 위치(실수, 소수점 포함) 알려줌
+  const windowHeight = window.innerHeight; // 뷰포트 높이(innerHeight은 window객체에만 있음)
+
+  // 뷰포트 바닥에 footer가 닿을때까지 거리
+  const touchFooterHeight = windowHeight - footerRect.top;
+
+  if (touchFooterHeight > 0) {
+    // footer가 보이기 시작하면 '.up' 클래스 추가
+    elTopBtn.classList.add('up');
+  } else {
+    // 바닥 요소가 아직 안 보이면 '.up' 클래스 빼기
+    elTopBtn.classList.remove('up');
+  }
+  
+  
+}//topBtn_upFun() 함수 정의
+
+// 스크롤 또는 브라우저 창 크기 변화시, 적당히 실행하게 끔 함
+let isTicking = false; // 예약타이머 꺼두기
+const onScrollOrResize = () => {
+  if(!isTicking){ // 예약타이머가 on 상태면, 해당 코드 무시
+    /* 
+      window.requestAnimationFrame(콜백): 브라우저가 화면을 새로 그릴 때, 내 사양(=사용자 모니터 주사율 + 브라우저 처리 능력)에 맞춰 setTimeOut()을 걸어준다는 느낌
+      
+      ex. (모니터 주사율만 고려한다는 가정하에))
+      모니터가 1초에 60번(0.016초마다) 화면을 그려준다면, 
+      requestAnimationFrame()은 0.016초 이후 실행되는 setTimeOut()같은 거임
+      스크롤 할때 rAF 0.016초후 한 번 실행이 아닌, 0.016초 예약이 스크롤마다 여러개 쌓임. 이를 isTicking으로 0.016초 후 1번만 실행하도록 한 거(* 이를 쓰로틀링(Throttling) 기법이라 함 )
+      --------------------------------------------------
+      
+      쓰로틀링 (Throttling) vs 디바운싱 (Debouncing) 차이)
+      
+      - 쓰로틀링 (Throttling): 일정한 주기(ex. 0.016초)후, 한 번 실행
+      - 디바운싱 (Debouncing): 이벤트(스크롤, 리사이즈) 끝난 후, 한 번 실행
+      
+      --------------------------------------------------
+      (* topUp버튼이 bottom에 맞닿을 때, 스크롤 끝나고 topUp버튼이 올라가는 것보다 스크롤 중 올라가는 게 자연스럽기에 이번에 쓰로틀링 기법을 씀)
+      --------------------------------------------------
+      // 디바운싱으로 코드짠 경우 (이벤트 끝나고 대략 0.2초 안에 실행))
+      let debounceTimer = null; // 실행 대기 중인 타이머의 ID를 저장할 변수
+
+      const onScrollOrResize = () => {
+        // 1. 이전에 예약해 둔 타이머가 있다면 즉시 취소합니다. (계속 스크롤 중이므로 실행 보류)
+        if (debounceTimer) {
+          clearTimeout(debounceTimer);
+        }
+
+        // 2. 새로운 타이머를 맞춥니다. (예: 200ms 동안 추가 스크롤이 없으면 그때 실행)
+        debounceTimer = setTimeout(() => {
+          topBtn_upFun();
+          debounceTimer = null; // 실행 완료 후 타이머 변수 초기화
+        }, 200); 
+      };
+
+      window.addEventListener('scroll', onScrollOrResize, { passive: true });
+      window.addEventListener('resize', onScrollOrResize);
+      */
+    window.requestAnimationFrame(() => {
+      topBtn_upFun();
+      isTicking = false; //예약 풀려서 rAF의 콜백 실행후 마지막
+    });
+    isTicking = true; // 예약타이머 on상태
+  }//if(!isTicking)
+}//onScrollOrResize() 함수정의 
+
+window.addEventListener('scroll', onScrollOrResize, { passive: true });
+window.addEventListener('resize', onScrollOrResize);
+
+// 초기 로드 시 위치 한 번 계산
+topBtn_upFun();
+
 
 elCallA.onclick = (e) => {
     

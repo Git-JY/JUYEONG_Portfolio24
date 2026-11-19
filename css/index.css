@@ -56,6 +56,17 @@
   font-style: normal;
 }
 /* 2. mixin */
+:root {
+  --ani_tan1: 4px;
+  --ani_tan2: 8px;
+}
+@media (max-width: 700px) {
+  :root {
+    --ani_tan1: 2px;
+    --ani_tan2: 4px;
+  }
+}
+
 /* 3. 설정 리셋 */
 * {
   box-sizing: border-box;
@@ -91,11 +102,11 @@ i {
 @keyframes tantantanAni {
   0% {
     transform: scale(100%, 100%);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px var(--ani_tan1) var(--ani_tan1) rgba(0, 0, 0, 0.25);
   }
   100% {
     transform: scale(110%, 110%);
-    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px var(--ani_tan2) var(--ani_tan2) 0px rgba(0, 0, 0, 0.25);
   }
 }
 @keyframes underlineAni {
@@ -138,7 +149,7 @@ header {
   top: 0px;
   left: 0px;
   z-index: 50;
-  width: 100%;
+  width: 100vw;
   padding: 0px 10%;
   background-color: white;
   overflow: hidden;
@@ -179,7 +190,6 @@ header > div.contentsWrapper > nav > a {
   font-family: "The Jamsil 2";
   color: black;
   text-wrap: nowrap;
-  cursor: pointer;
 }
 header > div.contentsWrapper > nav > a:not(:last-child) {
   margin-right: 35px;
@@ -188,19 +198,21 @@ header > div.contentsWrapper > nav > a.on {
   color: white;
   background-color: black;
 }
+header > div.contentsWrapper > nav > a {
+  cursor: pointer;
+}
 header.removeH1 {
   background-color: rgba(255, 255, 255, 0.4);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-}
-header.removeH1 > div.contentsWrapper {
-  border-bottom: none;
 }
 header.removeH1 > div.contentsWrapper h1 {
   height: 0px;
   margin-top: 0;
   overflow: hidden;
+}
+header.removeH1 > div.contentsWrapper {
+  border-bottom: none;
 }
 header.active {
   transform: translateY(-100%);
@@ -307,11 +319,13 @@ section.sec_intro > article.keyword_intro > ul.keyword_name > li {
   color: white;
   text-wrap: nowrap;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transition: transform cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.1s, box-shadow cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.1s;
-  cursor: pointer;
 }
 section.sec_intro > article.keyword_intro > ul.keyword_name > li:not(:last-child) {
   margin-right: 75px;
+}
+section.sec_intro > article.keyword_intro > ul.keyword_name > li {
+  transition: transform cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.1s, box-shadow cubic-bezier(0.61, -0.05, 0.17, 2.39) 0.1s;
+  cursor: pointer;
 }
 section.sec_intro > article.keyword_intro > ul.keyword_name > li > span {
   font-family: "The Jamsil 3";
@@ -404,8 +418,13 @@ section.sec_skill article > h3 {
 }
 section.sec_skill > div.allWrapper_skill {
   width: 900px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 section.sec_skill > div.allWrapper_skill > div.topWrapper {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -476,7 +495,7 @@ section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_sk
 section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill {
   width: 45%;
   height: 100%;
-  padding: 60px 40px 0px 34px;
+  padding: 50px 34px 0px;
 }
 section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li {
   display: flex;
@@ -484,13 +503,13 @@ section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_
   align-items: center;
 }
 section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li:not(:last-child) {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i {
   flex-shrink: 0;
-  width: 90px;
-  height: 90px;
-  margin-right: 30px;
+  width: 70px;
+  height: 70px;
+  margin-right: 25px;
 }
 section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i > img {
   width: 100%;
@@ -520,6 +539,7 @@ section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_
 section.sec_skill > div.allWrapper_skill > article.skill_skill {
   padding: 46px 90px 48px;
   margin-top: 64px;
+  width: 100%;
 }
 section.sec_skill > div.allWrapper_skill > article.skill_skill > h3 {
   font-size: 2.25rem;
@@ -605,6 +625,12 @@ section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWra
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > h4 {
   border-radius: 30px;
@@ -710,6 +736,10 @@ section.sec_portfolio > article.wrapper > h2 > a.gitBtn {
   background: url(../img/icon_github.svg) center/100% 100% no-repeat scroll;
 }
 section.sec_portfolio > article.wrapper > div.contentsWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   margin-top: 50px;
   width: 997px;
   border-radius: 15px;
@@ -726,10 +756,12 @@ section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu >
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  cursor: pointer;
 }
 section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder:not(:last-child) {
   margin-right: 30px;
+}
+section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder {
+  cursor: pointer;
 }
 section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > p.polderImg {
   width: 60px;
@@ -754,13 +786,10 @@ section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu >
 }
 section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents {
   margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  -moz-column-gap: 7.8%;
-       column-gap: 7.8%;
-  row-gap: 26px;
+  width: 652px;
+  display: grid;
+  gap: 26px 26px;
+  grid-template-columns: repeat(3, 1fr);
 }
 section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li {
   position: relative;
@@ -768,8 +797,10 @@ section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioCont
   left: 0px;
   z-index: 0;
   flex-shrink: 0;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: -moz-min-content;
+  height: min-content;
+  aspect-ratio: 1/1;
   border-radius: 10px;
   background: white;
   overflow: hidden;
@@ -866,11 +897,11 @@ footer > a.kakaoBtn > i.icon {
 button.topUpBtn {
   position: fixed;
   right: 30px;
-  bottom: 85px;
   width: 70px;
   height: 70px;
   border-radius: 50%;
   background-color: white;
+  transition: bottom 0.2s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -882,24 +913,28 @@ button.topUpBtn > i.icon {
   height: 27px;
   background: url(../img/icon_topUp.svg) center/100% 100% no-repeat scroll;
 }
+button.topUpBtn.up {
+  bottom: 140px;
+}
 
 div.kakaoQR {
   position: fixed;
   top: -110%;
   left: 0px;
   z-index: 100;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
   transition: top 0.2s;
 }
 div.kakaoQR > button.close {
   position: absolute;
-  top: 18px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
   width: 25px;
   height: 25px;
   background: url("../img/icon_close.svg") center/100% 100% no-repeat scroll;
@@ -907,8 +942,8 @@ div.kakaoQR > button.close {
 }
 div.kakaoQR > div.wrapper {
   width: 55%;
-  max-width: 600px;
-  border-radius: 50px;
+  max-width: 350px;
+  border-radius: 20px;
   overflow: hidden;
 }
 div.kakaoQR > div.wrapper > span {
@@ -916,7 +951,7 @@ div.kakaoQR > div.wrapper > span {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 16px;
   font-family: "The Jamsil 2";
   color: rgba(249, 224, 0, 0.9);
   letter-spacing: 3.2px;
@@ -931,15 +966,12 @@ div.kakaoQR > div.wrapper > i > img {
   width: 100%;
 }
 div.kakaoQR > div.kakoIDCopy {
-  width: 70vw;
-  height: 35vw;
-  border-radius: 2vw;
-  border: 10px solid #F9E000;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   display: none;
+  width: 278px;
+  height: 130px;
+  border-radius: 10px;
+  border: 7px solid #F9E000;
+  background-color: white;
 }
 div.kakaoQR > div.kakoIDCopy > div.contentsWrapper {
   display: flex;
@@ -951,29 +983,36 @@ div.kakaoQR > div.kakoIDCopy > div.contentsWrapper > strong {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5.4vw;
-  font-family: "The Jamsil 2";
+  font-size: 18px;
+  font-family: "The Jamsil 3";
   color: black;
   text-wrap: nowrap;
 }
 div.kakaoQR > div.kakoIDCopy > div.contentsWrapper > strong > i {
-  width: 10vw;
-  height: 10vw;
+  width: 32px;
+  height: 30px;
   background: url("../img/icon_kakao.svg") center/100% 100% no-repeat scroll;
-  margin-right: 1.8vw;
+  margin-right: 6px;
 }
 div.kakaoQR > div.kakoIDCopy > div.contentsWrapper > button.copyBtn {
-  margin-top: 1vw;
+  margin-top: 16px;
+  border-radius: 5px;
+  width: 220px;
+  height: 36px;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #441D00;
-  border-radius: 1vw;
-  padding: 1.5vw 7vw;
-  font-size: 3.6vw;
-  font-family: "The Jamsil 3";
+  font-size: 14px;
+  font-family: "The Jamsil 4";
   color: white;
   text-wrap: nowrap;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.7px;
 }
 div.kakaoQR.on {
+  opacity: 1;
+  visibility: visible;
   top: 0%;
   box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.7);
 }
@@ -1146,15 +1185,15 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     font-size: 1.8vw;
   }
   section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill {
-    padding: 6vw 4vw 0px 3.4vw;
+    padding: 4.7vw 3.2vw 0px;
   }
   section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li:not(:last-child) {
-    margin-bottom: 3vw;
+    margin-bottom: 2.5vw;
   }
   section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i {
-    width: 9vw;
-    height: 9vw;
-    margin-right: 3vw;
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-right: 2.3vw;
   }
   section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i > img {
     width: 100%;
@@ -1253,38 +1292,33 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     border-radius: 0px;
     padding: 3.5vw 0px 8.5vw;
   }
-  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder {
-    cursor: pointer;
-  }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder:not(:last-child) {
     margin-right: 3vw;
   }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder {
+    cursor: pointer;
+  }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > p.polderImg {
-    width: 6vw;
-    height: 6vw;
+    width: 7vw;
+    height: 7vw;
     border-radius: 1vw;
     padding: 11%;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > span {
-    font-size: 2vw;
+    font-size: 2.3vw;
     margin-top: 1vw;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents {
     margin-top: 4vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -moz-column-gap: 7.8%;
-         column-gap: 7.8%;
+    -moz-column-gap: 2.6vw;
+         column-gap: 2.6vw;
     row-gap: 2.6vw;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li {
-    width: 30vw;
-    height: 30vw;
     border-radius: 1vw;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li > a.contentsWrapper {
-    font-size: 3.2vw;
+    font-size: 2.2vw;
   }
   footer {
     height: 12vw;
@@ -1298,21 +1332,15 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     width: 6.3vw;
     height: 5.7vw;
   }
-  div.kakaoQR > button.close {
-    top: 3vw;
-    right: 3vw;
-    width: 5vw;
-    height: 5vw;
+  button.topUpBtn {
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
   }
-  div.kakaoQR > div.wrapper {
-    border-radius: 5vw;
-  }
-  div.kakaoQR > div.wrapper > span {
-    padding: 2vw 0.7vw 0.7vw;
-    font-size: 2.8vw;
-  }
-  div.kakaoQR.on {
-    box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.7);
+  button.topUpBtn > i.icon {
+    width: 21px;
+    height: 20.25px;
+    background: url(../img/icon_topUp.svg) center/100% 100% no-repeat scroll;
   }
   div.swal2-container {
     border-radius: 1vw;
@@ -1333,60 +1361,474 @@ div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
     padding: 1vw 3vw;
   }
 }
-@media (max-width: 950px) {
+@media (max-width: 700px) {
+  body::-webkit-scrollbar {
+    width: 5px; /* 스크롤바의 너비 */
+  }
+  header {
+    padding: 0px 10px;
+  }
+  header > div.contentsWrapper {
+    padding-bottom: 5px;
+  }
+  header > div.contentsWrapper > h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+    text-align: right;
+  }
+  header > div.contentsWrapper > nav {
+    height: 25px;
+    margin-top: 6px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  header > div.contentsWrapper > nav > a {
+    padding: 5px 5.5px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+  header > div.contentsWrapper > nav > a:not(:last-child) {
+    margin-right: 12px;
+  }
+  section.sec_intro {
+    padding: 120px 10px 30px;
+  }
+  section.sec_intro > div.basic_intro {
+    height: auto;
+  }
+  section.sec_intro > div.basic_intro > div {
+    flex-shrink: 0;
+  }
+  section.sec_intro > div.basic_intro > div.leftSide {
+    width: 140px;
+    height: 162px;
+    margin-right: 25px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide {
+    width: 175px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl {
+    font-size: 14px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl > dt {
+    height: 25px;
+    border-radius: 2px;
+    font-size: 16px;
+  }
+  section.sec_intro > div.basic_intro > div.rightSide > dl > dd {
+    margin-top: 5px;
+  }
+  section.sec_intro > article.keyword_intro {
+    border: 0.5px solid #D9D9D9;
+    width: 340px;
+    max-width: none;
+    margin-top: 45px;
+    padding: 30px 0px 60px;
+  }
+  section.sec_intro > article.keyword_intro > h3 {
+    font-size: 19px;
+    padding: 0px 10px;
+  }
+  section.sec_intro > article.keyword_intro > ul.keyword_name {
+    margin-bottom: 30px;
+  }
+  section.sec_intro > article.keyword_intro > ul.keyword_name > li {
+    width: 90px;
+    height: 90px;
+    font-size: 18px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  section.sec_intro > article.keyword_intro > ul.keyword_name > li:not(:last-child) {
+    margin-right: 20px;
+  }
+  section.sec_intro > article.keyword_intro > ul.keyword_name > li:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt {
+    margin-top: 0px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt > ul.keywordComments > li:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  section.sec_intro > article.keyword_intro > div.keywordTxt > span {
+    margin-top: 30px;
+  }
+  section.sec_skill {
+    padding: 30px 10px;
+  }
+  section.sec_skill article {
+    border-radius: 10px;
+  }
+  section.sec_skill article > h3 {
+    padding: 5px 9px;
+    font-size: 22px;
+    border-radius: 5px;
+  }
+  section.sec_skill > div.allWrapper_skill {
+    width: 100%;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper {
+    width: 100%;
+    height: 188px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill {
+    width: 340px;
+    height: 100%;
+    padding: 30px 10px 0px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper:not(:last-child) {
+    margin-bottom: 13px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > strong.period {
+    width: 100%;
+    padding: 5px 13px;
+    border-radius: 15px;
+    font-size: 15px;
+    letter-spacing: 0.75px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > strong.period > mark {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    transform: translate(0%, 50%);
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+    letter-spacing: 0.48px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > div.inforTxt {
+    margin: 12px 0px 0px 13px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill > ul.contentsWrapper > li.inforWrapper > div.inforTxt > span {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 0.28px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill {
+    width: 292px;
+    height: 100%;
+    padding: 30px 10px 0px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li:not(:last-child) {
+    margin-bottom: 13px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > i {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: 12px;
+    letter-spacing: 0.24px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p > span {
+    font-family: "The Jamsil 2";
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p > b {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill > ul.contentsWrapper > li > p > b::after {
+    content: "";
+    width: 1px;
+    height: 11px;
+    background-color: #999;
+    margin: 0px 10px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill {
+    width: 100%;
+    padding: 30px 10px 22px;
+    margin-top: 33px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > h3 {
+    font-size: 22px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg {
+    padding: 5px 5px 0px;
+    border-radius: 5px;
+    transform: translateY(-50%);
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label {
+    width: 68px;
+    height: 32px;
+    padding: 3px 7px;
+    border-radius: 25px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label > span {
+    left: 41px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper > label::before {
+    content: "TEXT";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: 9px;
+    letter-spacing: 0.24px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label {
+    background-color: #78D2FF;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label > span {
+    left: 7px;
+    background-image: url(../img/icon_rightArrow.svg);
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.skillIcon_whiteBg > div.skillIconWrappper input:checked + label::before {
+    content: "ICON";
+    left: auto;
+    right: 10px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper {
+    justify-content: center;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > h4 {
+    border-radius: 15.25px;
+    padding: 5px 10px;
+    font-size: 11px;
+    letter-spacing: 0.55px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup {
+    margin-top: 13px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li {
+    height: 25px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i {
+    width: 25px;
+    height: 100%;
+    margin-right: 8px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > img {
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > span.txtVer {
+    font-size: 7.8px;
+    letter-spacing: 0.15px;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+    display: none;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > div.gaugeBar {
+    width: 137px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper ul.skillGroup > li > div.gaugeBar > span.gauge {
+    border-radius: 10px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper > div.rightSide > div.backEndWrapper {
+    margin-bottom: 13px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill.OFF > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > img {
+    display: none;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill.OFF > div.contentsWrapper div.skillWrapper ul.skillGroup > li > i > span.txtVer {
+    display: inline-block;
+  }
+}
+@media (max-width: 700px) and (max-width: 665px) {
+  section.sec_skill > div.allWrapper_skill > div.topWrapper {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.education_skill {
+    height: 188px;
+    margin-bottom: 33px;
+  }
+  section.sec_skill > div.allWrapper_skill > div.topWrapper > article.certificate_skill {
+    width: 340px;
+    height: 180px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill {
+    width: 340px;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper {
+    justify-content: space-between;
+    -moz-column-gap: normal;
+         column-gap: normal;
+  }
+  section.sec_skill > div.allWrapper_skill > article.skill_skill > div.contentsWrapper div.skillWrapper > ul.skillGroup > li > div.gaugeBar {
+    width: 115px;
+  }
+}
+@media (max-width: 700px) {
+  section.sec_portfolio {
+    overflow: hidden;
+    padding: 30px 10px;
+  }
+  section.sec_portfolio > article.wrapper {
+    width: 100%;
+  }
   section.sec_portfolio > article.wrapper > h2 {
-    font-size: 5vw;
+    font-size: 22px;
+    letter-spacing: 0.44px;
   }
   section.sec_portfolio > article.wrapper > h2 > a.gitBtn {
-    width: 5vw;
-    height: 5vw;
-    margin-left: 1.2vw;
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper {
-    margin-top: 3vw;
+    margin-top: 13px;
     width: 100%;
-    padding: 5vw 0px 8.5vw;
-  }
-  section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder {
-    cursor: pointer;
+    border-radius: 7.5px;
+    padding: 16px 0;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder:not(:last-child) {
-    margin-right: 4vw;
+    margin-right: 16px;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > p.polderImg {
-    width: 9vw;
-    height: 9vw;
-    border-radius: 1.5vw;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > nav.polderMenu > a.polder > span {
-    font-size: 2.5vw;
+    font-size: 12px;
+    letter-spacing: 0.24px;
+    margin-top: 5px;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents {
-    margin-top: 6vw;
-    -moz-column-gap: 7%;
-         column-gap: 7%;
-    row-gap: 4vw;
+    width: 320px;
+    margin-top: 12px;
+    -moz-column-gap: 13px;
+         column-gap: 13px;
+    row-gap: 13px;
   }
   section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li {
-    width: 35vw;
-    height: 35vw;
-    border-radius: 1vw;
+    border-radius: 5px;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li > a.contentsWrapper {
+    font-size: 12px;
+    font-family: "The Jamsil 6";
+    color: white;
+    text-wrap: nowrap;
+    text-decoration: none;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li > a.contentsWrapper > strong {
+    letter-spacing: 1px;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li > i.bg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1, 1);
+    transition: transform 0.2s;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li > i.bg > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  section.sec_portfolio > article.wrapper > div.contentsWrapper > ul.portfolioContents > li:hover > a.contentsWrapper {
+    box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+  footer {
+    height: 55px;
+  }
+  footer > a > i.icon {
+    width: 25px;
+    height: 25px;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.02));
+  }
+  footer > a.kakaoBtn > i.icon {
+    width: 25px;
+    height: 25px;
   }
   button.topUpBtn {
-    right: 20px;
-    bottom: 50px;
-    width: 50px;
-    height: 50px;
+    right: 10px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
   }
   button.topUpBtn > i.icon {
-    width: 21px;
-    height: 20.25px;
-    background: url(../img/icon_topUp.svg) center/100% 100% no-repeat scroll;
+    width: 17px;
+    height: 17px;
+  }
+  button.topUpBtn.up {
+    bottom: 65px;
+  }
+  div.kakaoQR > button.close {
+    right: 10px;
+    width: 20px;
+    height: 20px;
   }
   div.kakaoQR > div.wrapper {
     display: none;
   }
   div.kakaoQR > div.kakoIDCopy {
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.swal2-container {
+    border-radius: 10px;
+  }
+  div.swal2-container div.swal2-popup {
+    width: 380px;
+    padding: 24px 30px;
+  }
+  div.swal2-container div.swal2-popup h2.swal2-title {
+    padding: 0px;
+    font-size: 1.5rem;
+    font-family: "The Jamsil 2";
+    color: #666;
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  div.swal2-container div.swal2-popup div.swal2-html-container {
+    padding: 16px 0px 16px;
+    font-size: 1.125rem;
+    font-family: "The Jamsil 2";
+    color: #999;
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  div.swal2-container div.swal2-popup div.swal2-actions {
+    margin: 0px;
+  }
+  div.swal2-container div.swal2-popup div.swal2-actions button.swal2-confirm {
+    font-size: 1.25rem;
+    font-family: "The Jamsil 3";
+    padding: 12.5px 22px;
+    background-color: #78D2FF;
+  }
+  @keyframes keywordAni {
+    0% {
+      transform: scale(0%, 0%);
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      transform: scale(110%, 110%);
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
   }
 }/*# sourceMappingURL=index.css.map */
