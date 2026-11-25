@@ -46,6 +46,13 @@
             "date": "2023/10/30 ~ 11/10",
             "url": "https://git-jy.github.io/portfolio_react_ver/",
             "img": "./img/portfolio.jpg"
+        },
+        {
+            "name": "포트폴리오2",
+            "use": "JAVASCRIPT",
+            "date": "2024/10/7 ~ 10/19",
+            "url": "https://git-jy.github.io/JUYEONG_Portfolio24/",
+            "img": "./img/portfolio2.jpg"
         }
 
     ],
@@ -65,18 +72,18 @@
             "img": "./img/yflix.jpg"
         },
         {
-            "name": "포트폴리오2",
-            "use": "JAVASCRIPT",
-            "date": "2025/10/30 ~ 11/10",
-            "url": "https://git-jy.github.io/portfolio_react_ver/",
-            "img": "./img/portfolio.jpg"
-        },
-        {
             "name": "포트폴리오1",
             "use": "REACT.JS",
             "date": "2023/10/30 ~ 11/10",
             "url": "https://git-jy.github.io/portfolio_react_ver/",
             "img": "./img/portfolio.jpg"
+        },
+        {
+            "name": "포트폴리오2",
+            "use": "JAVASCRIPT",
+            "date": "2024/10/7 ~ 10/19",
+            "url": "https://git-jy.github.io/JUYEONG_Portfolio24/",
+            "img": "./img/portfolio2.jpg"
         },
         {
             "name": "식물과 함께",
