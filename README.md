@@ -18,7 +18,7 @@
 <div>
   <h3>프로젝트 기본 정보</h3>
   <ul>
-    <li><b>:calendar: 제작기간</b> : 2023/6/27 ~ 7/21</li>
+    <li><b>:calendar: 제작기간</b> : 2024/10/7 ~ 10/19</li>
     <li>
       <b>:hammer_and_wrench: 사용 툴</b> : 
       <img alt="Html5" height="20" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/>

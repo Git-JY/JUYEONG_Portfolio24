@@ -44,17 +44,16 @@
             "name": "포트폴리오1",
             "use": "REACT.JS",
             "date": "2023/10/30 ~ 11/10",
-            "url": "https://git-jy.github.io/portfolio_react_ver/",
+            "url": "https://github.com/Git-JY/portfolio_react_ver/blob/main/README.md",
             "img": "./img/portfolio.jpg"
         },
         {
             "name": "포트폴리오2",
             "use": "JAVASCRIPT",
             "date": "2024/10/7 ~ 10/19",
-            "url": "https://git-jy.github.io/JUYEONG_Portfolio24/",
+            "url": "https://github.com/Git-JY/JUYEONG_Portfolio24/blob/main/README.md",
             "img": "./img/portfolio2.jpg"
         }
-
     ],
     "all": [
         {
@@ -75,14 +74,14 @@
             "name": "포트폴리오1",
             "use": "REACT.JS",
             "date": "2023/10/30 ~ 11/10",
-            "url": "https://git-jy.github.io/portfolio_react_ver/",
+            "url": "https://github.com/Git-JY/portfolio_react_ver/blob/main/README.md",
             "img": "./img/portfolio.jpg"
         },
         {
             "name": "포트폴리오2",
             "use": "JAVASCRIPT",
             "date": "2024/10/7 ~ 10/19",
-            "url": "https://git-jy.github.io/JUYEONG_Portfolio24/",
+            "url": "https://github.com/Git-JY/JUYEONG_Portfolio24/blob/main/README.md",
             "img": "./img/portfolio2.jpg"
         },
         {
